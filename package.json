@@ -10,9 +10,10 @@
     "whatwg-fetch": "^2.0.3"
   },
   "scripts": {
-    "start": "node scripts/start.js partner-2",
+    "dev": "node scripts/start.js partner-2",
     "build": "node scripts/build.js partner-1",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "postinstall": "npm run build"
   },
   "devDependencies": {
     "@types/node": "9.4.0",
