@@ -1,8 +1,7 @@
 // file types.ts
 
 const TYPES = {
-  ExampleService: Symbol.for('ExampleService'),
-  LoggerService: Symbol.for('LoggerService'),
+  HolidayApiService: Symbol.for('HolidayApiService'),
 };
 
 export { TYPES };

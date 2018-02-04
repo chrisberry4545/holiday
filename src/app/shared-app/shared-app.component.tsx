@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component, ComponentState, Props } from 'react';
 import * as React from 'react';
 import './shared-app.component.scss';
 
@@ -11,18 +11,40 @@ import {
 } from './../dependency-injection/inversify.config';
 
 import {
-  ExampleServiceInterface,
+  HolidayApiServiceInterface,
 } from './../../services';
 
 import {
   TEST_ICON,
 } from './../icons';
 
-export class SharedAppComponent extends Component {
+import {
+  HolidayResultInterface,
+} from '@chrisb-dev/holiday-shared-models';
+
+interface SharedAppStateInterface extends ComponentState {
+  returnedData: HolidayResultInterface[];
+}
+
+export class SharedAppComponent
+extends Component<Props<{}>, SharedAppStateInterface> {
+  constructor(
+    public props: Props<{}>,
+  ) {
+    super(props);
+    this.state = {
+      returnedData: [],
+    };
+  }
+
   public render() {
-    const exampleService =
-      myContainer.get<ExampleServiceInterface>(TYPES.ExampleService);
-    const returnedData = exampleService.getSomeData();
+    const holidayApiService =
+      myContainer.get<HolidayApiServiceInterface>(TYPES.HolidayApiService);
+    holidayApiService.getHolidayResults().then((returnedData) => {
+      this.setState({
+        returnedData,
+      });
+    });
     return (
       <div className='c-app'>
         <header className='c-app__header'>
@@ -33,7 +55,13 @@ export class SharedAppComponent extends Component {
         <h4 className='c-app__color-name'>Secondary color</h4>
         <div className='c-app__color c-app__color--secondary'></div>
 
-        <div>Test data {returnedData}</div>
+        <div>
+          {
+            this.state.returnedData.map((holidayResult) => {
+              return <div>{ holidayResult.country }</div>;
+            })
+          }
+        </div>
 
         <h4>Svg</h4>
         <TEST_ICON/>

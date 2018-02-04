@@ -1,0 +1,26 @@
+{
+    "file": "holiday-api-holdiay-api.service.ts",
+    "fullFilePath": "/Users/chrisb/Documents/Dev/personal/holiday/src/services/holiday-api/holdiay-api.service.ts",
+    "matches": [
+        {
+            "matchLine": 20,
+            "matchContent": "`process.env.BACKEND_URL${API_URLS.HOLIDAY_RESULTS}`,",
+            "replaceTo": "`http://localhost:5000${API_URLS.HOLIDAY_RESULTS}`,"
+        },
+        {
+            "matchLine": 20,
+            "matchContent": "`process.env.BACKEND_URL/${API_URLS.HOLIDAY_RESULTS}`,",
+            "replaceTo": "`http://localhost:5000/${API_URLS.HOLIDAY_RESULTS}`,"
+        },
+        {
+            "matchLine": 20,
+            "matchContent": "`process.env.BACKEND_URL${API_URLS.HOLIDAY_RESULTS}`,",
+            "replaceTo": "`http://localhost:5000${API_URLS.HOLIDAY_RESULTS}`,"
+        },
+        {
+            "matchLine": 20,
+            "matchContent": "`${process.env.BACKEND_URL}${API_URLS.HOLIDAY_RESULTS}`,",
+            "replaceTo": "`${http://localhost:5000}${API_URLS.HOLIDAY_RESULTS}`,"
+        }
+    ]
+}

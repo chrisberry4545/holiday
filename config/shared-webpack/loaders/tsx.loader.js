@@ -1,4 +1,4 @@
-const tsxLoader = ({partnerName}) => (
+const tsxLoader = ({partnerName, backendUrl}) => (
   {
     test: /\.tsx?$/,
     use: [
@@ -11,9 +11,18 @@ const tsxLoader = ({partnerName}) => (
             search: '/dependency-injection/inversify.config',
             replace: `/${partnerName}/inversify.config`,
             flags: 'g',
-            file: true
+            file: true,
         },
       },
+      {
+        loader: 'replace-string-loader',
+        options: {
+          search: 'process.env.BACKEND_URL',
+          replace: backendUrl,
+          flags: 'g',
+          file: true,
+        }
+      }
     ],
   }
 );
