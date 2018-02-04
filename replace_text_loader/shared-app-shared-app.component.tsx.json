@@ -5,6 +5,16 @@
         {
             "matchLine": 11,
             "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-1/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-1/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
             "replaceTo": "} from './../partner-2/inversify.config';"
         },
         {
