@@ -35,9 +35,6 @@ extends Component<Props<{}>, SharedAppStateInterface> {
     this.state = {
       returnedData: [],
     };
-  }
-
-  public render() {
     const holidayApiService =
       myContainer.get<HolidayApiServiceInterface>(TYPES.HolidayApiService);
     holidayApiService.getHolidayResults().then((returnedData) => {
@@ -45,6 +42,9 @@ extends Component<Props<{}>, SharedAppStateInterface> {
         returnedData,
       });
     });
+  }
+
+  public render() {
     return (
       <div className='c-app'>
         <header className='c-app__header'>
