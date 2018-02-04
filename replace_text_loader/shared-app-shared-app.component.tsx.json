@@ -1,0 +1,171 @@
+{
+    "file": "shared-app-shared-app.component.tsx",
+    "fullFilePath": "/Users/chrisb/Documents/Dev/personal/holiday/src/app/shared-app/shared-app.component.tsx",
+    "matches": [
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 13,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-1/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-1/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './../partner-2/inversify.config';"
+        },
+        {
+            "matchLine": 11,
+            "matchContent": "} from './../dependency-injection/inversify.config';",
+            "replaceTo": "} from './..partner-2/inversify.config';"
+        }
+    ]
+}
