@@ -10,6 +10,36 @@
         {
             "matchLine": 1,
             "matchContent": "@import './../../styles/partner/<!--partnerName--settings-->';",
+            "replaceTo": "@import './../../styles/partner/partner-2/_settings.partner-2';"
+        },
+        {
+            "matchLine": 1,
+            "matchContent": "@import './../../styles/partner/<!--partnerName--settings-->';",
+            "replaceTo": "@import './../../styles/partner/partner-2/_settings.partner-2';"
+        },
+        {
+            "matchLine": 1,
+            "matchContent": "@import './../../styles/partner/<!--partnerName--settings-->';",
+            "replaceTo": "@import './../../styles/partner/partner-2/_settings.partner-2';"
+        },
+        {
+            "matchLine": 1,
+            "matchContent": "@import './../../styles/partner/<!--partnerName--settings-->';",
+            "replaceTo": "@import './../../styles/partner/partner-2/_settings.partner-2';"
+        },
+        {
+            "matchLine": 1,
+            "matchContent": "@import './../../styles/partner/<!--partnerName--settings-->';",
+            "replaceTo": "@import './../../styles/partner/partner-2/_settings.partner-2';"
+        },
+        {
+            "matchLine": 1,
+            "matchContent": "@import './../../styles/partner/<!--partnerName--settings-->';",
+            "replaceTo": "@import './../../styles/partner/partner-2/_settings.partner-2';"
+        },
+        {
+            "matchLine": 1,
+            "matchContent": "@import './../../styles/partner/<!--partnerName--settings-->';",
             "replaceTo": "@import './../../styles/partner/partner-1/_settings.partner-1';"
         },
         {

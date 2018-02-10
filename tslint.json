@@ -7,7 +7,7 @@
       "max-classes-per-file": 2,
       "quotemark": [true, "single"],
       "import-spacing": false,
-      "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"],
+      "variable-name": [true, "ban-keywords", "allow-leading-underscore"],
       "interface-name": [false],
       "no-empty-interface": [false]
   }

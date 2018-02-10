@@ -2,6 +2,18 @@ import { Component, ComponentState, Props } from 'react';
 import * as React from 'react';
 import './shared-app.component.scss';
 
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+import {
+  ConnectedRouter,
+  routerMiddleware,
+  routerReducer,
+} from 'react-router-redux';
+
+import { Provider } from 'react-redux';
+
 import {
   TYPES,
 } from './../dependency-injection';
@@ -15,12 +27,36 @@ import {
 } from './../../services';
 
 import {
-  TEST_ICON,
-} from './../icons';
+  HowLongFlightComponent,
+  WhatFoodDoYouLikeComponent,
+} from './../../pages';
 
 import {
   HolidayResultInterface,
 } from '@chrisb-dev/holiday-shared-models';
+
+import {
+  reducer,
+} from './../../store';
+
+import {
+  StateInterface,
+  URLS,
+} from './../../models';
+
+import createHistory from 'history/createBrowserHistory';
+
+const history = createHistory();
+const historyMiddleware = routerMiddleware(history);
+
+const store = createStore<StateInterface>(
+  combineReducers({
+    main: reducer,
+    router: routerReducer,
+  }),
+  undefined,
+  applyMiddleware(historyMiddleware),
+);
 
 interface SharedAppStateInterface extends ComponentState {
   returnedData: HolidayResultInterface[];
@@ -46,26 +82,16 @@ extends Component<Props<{}>, SharedAppStateInterface> {
 
   public render() {
     return (
-      <div className='c-app'>
-        <header className='c-app__header'>
-          <h1 className='c-app__title'>ChrisB React Seed</h1>
-        </header>
-        <h4 className='c-app__color-name'>Primary color</h4>
-        <div className='c-app__color c-app__color--primary'></div>
-        <h4 className='c-app__color-name'>Secondary color</h4>
-        <div className='c-app__color c-app__color--secondary'></div>
-
-        <div>
-          {
-            this.state.returnedData.map((holidayResult) => {
-              return <div>{ holidayResult.country }</div>;
-            })
-          }
-        </div>
-
-        <h4>Svg</h4>
-        <TEST_ICON/>
-      </div>
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <Switch>
+            <Route exact path={'/' + URLS.HOW_LONG_FLIGHT}
+              component={HowLongFlightComponent} />
+            <Route path={'/' + URLS.WHAT_FOOD}
+              component={WhatFoodDoYouLikeComponent} />
+          </Switch>
+        </ConnectedRouter>
+      </Provider>
     );
   }
 }

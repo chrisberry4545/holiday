@@ -10,6 +10,36 @@
         {
             "matchLine": 20,
             "matchContent": "`process.env.BACKEND_URL${API_URLS.HOLIDAY_RESULTS}`,",
+            "replaceTo": "`http://localhost:5000/${API_URLS.HOLIDAY_RESULTS}`,"
+        },
+        {
+            "matchLine": 20,
+            "matchContent": "`process.env.BACKEND_URL${API_URLS.HOLIDAY_RESULTS}`,",
+            "replaceTo": "`http://localhost:5000/${API_URLS.HOLIDAY_RESULTS}`,"
+        },
+        {
+            "matchLine": 20,
+            "matchContent": "`process.env.BACKEND_URL${API_URLS.HOLIDAY_RESULTS}`,",
+            "replaceTo": "`http://localhost:5000/${API_URLS.HOLIDAY_RESULTS}`,"
+        },
+        {
+            "matchLine": 20,
+            "matchContent": "`process.env.BACKEND_URL${API_URLS.HOLIDAY_RESULTS}`,",
+            "replaceTo": "`http://localhost:5000/${API_URLS.HOLIDAY_RESULTS}`,"
+        },
+        {
+            "matchLine": 20,
+            "matchContent": "`process.env.BACKEND_URL${API_URLS.HOLIDAY_RESULTS}`,",
+            "replaceTo": "`http://localhost:5000/${API_URLS.HOLIDAY_RESULTS}`,"
+        },
+        {
+            "matchLine": 20,
+            "matchContent": "`process.env.BACKEND_URL${API_URLS.HOLIDAY_RESULTS}`,",
+            "replaceTo": "`http://localhost:5000/${API_URLS.HOLIDAY_RESULTS}`,"
+        },
+        {
+            "matchLine": 20,
+            "matchContent": "`process.env.BACKEND_URL${API_URLS.HOLIDAY_RESULTS}`,",
             "replaceTo": "`https://holiday-backend.herokuapp.com/${API_URLS.HOLIDAY_RESULTS}`,"
         },
         {
