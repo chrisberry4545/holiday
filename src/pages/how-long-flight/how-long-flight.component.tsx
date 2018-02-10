@@ -13,7 +13,8 @@ import {
 
 import {
   Action,
-} from './../../store/actions';
+  routeToThunk,
+} from './../../store';
 
 import {
   HowLongFlightDispatchProps,
@@ -39,7 +40,7 @@ const mapDispatchToProps = (
       });
     },
     onNextPage: () => {
-      dispatch(push(URLS.WHAT_FOOD));
+      dispatch(routeToThunk(URLS.WHAT_FOOD));
     },
   };
 };

@@ -3,6 +3,7 @@ import * as React from 'react';
 import './shared-app.component.scss';
 
 import { applyMiddleware, combineReducers, createStore } from 'redux';
+import thunk from 'redux-thunk';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -55,7 +56,7 @@ const store = createStore<StateInterface>(
     router: routerReducer,
   }),
   undefined,
-  applyMiddleware(historyMiddleware),
+  applyMiddleware(historyMiddleware, thunk),
 );
 
 interface SharedAppStateInterface extends ComponentState {

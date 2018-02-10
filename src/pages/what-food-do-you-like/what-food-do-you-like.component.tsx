@@ -11,7 +11,8 @@ import {
 
 import {
   Action,
-} from './../../store/actions';
+  routeToThunk,
+} from './../../store';
 
 import {
   WhatFoodDoYouLikeDispatchProps,
@@ -35,7 +36,7 @@ const mapDispatchToProps = (
 ): WhatFoodDoYouLikeDispatchProps => {
   return {
     onBack: () => {
-      dispatch(push(URLS.HOW_LONG_FLIGHT));
+      dispatch(routeToThunk(URLS.HOW_LONG_FLIGHT));
     },
   };
 };
