@@ -20,7 +20,7 @@ import {
   WhatFoodDoYouLikeDispatchProps,
   WhatFoodDoYouLikePresentation,
   WhatFoodDoYouLikeStateProps,
-} from './what-food-do-you-like.presentation';
+} from './';
 
 import { push } from 'react-router-redux';
 

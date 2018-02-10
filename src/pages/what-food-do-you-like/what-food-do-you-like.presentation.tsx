@@ -3,19 +3,9 @@ import * as React from 'react';
 import './what-food-do-you-like.scss';
 
 import {
-  FoodTypeInterface,
-} from '@chrisb-dev/holiday-shared-models';
-
-export interface WhatFoodDoYouLikeStateProps {
-  possibleFoodTypes: FoodTypeInterface[];
-  selectedFoodTypeIds: string[];
-}
-
-export interface WhatFoodDoYouLikeDispatchProps {
-  onBack: () => void;
-  onDeselectFoodType: (foodTypeId: string) => void;
-  onSelectFoodType: (foodTypeId: string) => void;
-}
+  WhatFoodDoYouLikeDispatchProps,
+  WhatFoodDoYouLikeStateProps,
+} from '.';
 
 interface WhatFoodDoYouLikeCombinedProps
   extends WhatFoodDoYouLikeStateProps, WhatFoodDoYouLikeDispatchProps {}

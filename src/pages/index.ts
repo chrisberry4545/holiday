@@ -1,6 +1,6 @@
 export {
   HowLongFlightComponent,
-} from './how-long-flight/how-long-flight.component';
+} from './how-long-flight/';
 
 export {
   WhatFoodDoYouLikeComponent,

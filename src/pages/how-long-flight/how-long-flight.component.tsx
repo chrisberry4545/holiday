@@ -21,7 +21,7 @@ import {
   HowLongFlightDispatchProps,
   HowLongFlightPresentation,
   HowLongFlightStateProps,
-} from './how-long-flight.presentation';
+} from './';
 
 const mapStateToProps = (
   state: StateInterface,

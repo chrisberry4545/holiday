@@ -3,18 +3,9 @@ import * as React from 'react';
 import './how-long-flight.scss';
 
 import {
-  FlightTimesInterface,
-} from '@chrisb-dev/holiday-shared-models';
-
-export interface HowLongFlightStateProps {
-  possibleFlightTimes: FlightTimesInterface[];
-  selectedFlightTimeId: string;
-}
-
-export interface HowLongFlightDispatchProps {
-  onFlightTimeChange: (selectedFlightTimeId: string) => void;
-  onNextPage: () => void;
-}
+  HowLongFlightDispatchProps,
+  HowLongFlightStateProps,
+} from './';
 
 interface HowLongFlightCombinedProps
   extends HowLongFlightStateProps, HowLongFlightDispatchProps {}
