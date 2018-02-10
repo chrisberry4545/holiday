@@ -11,7 +11,9 @@ import {
 
 import {
   Action,
+  deselectedFoodType,
   routeToThunk,
+  setSelectedFoodType,
 } from './../../store';
 
 import {
@@ -25,7 +27,10 @@ import { push } from 'react-router-redux';
 const mapStateToProps = (
   state: StateInterface,
 ): WhatFoodDoYouLikeStateProps => {
-  return {};
+  return {
+    possibleFoodTypes: state.main.formOptions.possibleFoodTypes,
+    selectedFoodTypeIds: state.main.formInput.selectedFoodTypeIds,
+  };
 };
 
 const mapDispatchToProps = (
@@ -34,6 +39,12 @@ const mapDispatchToProps = (
   return {
     onBack: () => {
       dispatch(routeToThunk(URLS.HOW_LONG_FLIGHT));
+    },
+    onDeselectFoodType: (foodTypeId: string) => {
+      dispatch(deselectedFoodType(foodTypeId));
+    },
+    onSelectFoodType: (foodTypeId: string) => {
+      dispatch(setSelectedFoodType(foodTypeId));
     },
   };
 };

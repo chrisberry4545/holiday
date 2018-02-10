@@ -60,6 +60,16 @@ const initialState = {
         id: '2',
         name: '2 - 4 hours',
       }],
+      possibleFoodTypes: [{
+        id: '1',
+        name: 'Spicy',
+      }, {
+        id: '2',
+        name: 'Mediterranean',
+      }, {
+        id: '3',
+        name: 'Middle Eastern',
+      }],
     },
   },
 } as StateInterface;
