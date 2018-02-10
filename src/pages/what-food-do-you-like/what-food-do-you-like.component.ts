@@ -13,6 +13,7 @@ import {
   Action,
   deselectedFoodType,
   routeToThunk,
+  sendUserInputThunk,
   setSelectedFoodType,
 } from './../../store';
 
@@ -39,6 +40,9 @@ const mapDispatchToProps = (
   return {
     onBack: () => {
       dispatch(routeToThunk(URLS.HOW_LONG_FLIGHT));
+    },
+    onComplete: () => {
+      dispatch(sendUserInputThunk());
     },
     onDeselectFoodType: (foodTypeId: string) => {
       dispatch(deselectedFoodType(foodTypeId));

@@ -29,6 +29,7 @@ import {
 
 import {
   HowLongFlightComponent,
+  ResultsComponent,
   WhatFoodDoYouLikeComponent,
 } from './../../pages';
 
@@ -110,10 +111,12 @@ extends Component<Props<{}>, SharedAppStateInterface> {
       <Provider store={store}>
         <ConnectedRouter history={history}>
           <Switch>
-            <Route exact path={'/' + URLS.HOW_LONG_FLIGHT}
-              component={HowLongFlightComponent} />
-            <Route path={'/' + URLS.WHAT_FOOD}
-              component={WhatFoodDoYouLikeComponent} />
+            <Route exact path={ `/${URLS.HOW_LONG_FLIGHT}` }
+              component={ HowLongFlightComponent } />
+            <Route path={ `/${URLS.WHAT_FOOD}` }
+              component={ WhatFoodDoYouLikeComponent } />
+            <Route path={ `/${URLS.RESULTS}` }
+              component={ ResultsComponent } />
           </Switch>
         </ConnectedRouter>
       </Provider>

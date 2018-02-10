@@ -1,9 +1,12 @@
 import {
-  FormInputStateInterface,
   FormOptionsStateInterface,
 } from './';
 
+import {
+  UserInputInterface,
+} from '@chrisb-dev/holiday-shared-models';
+
 export interface MainStateInterface {
-  formInput?: FormInputStateInterface;
+  formInput?: UserInputInterface;
   formOptions: FormOptionsStateInterface;
 }

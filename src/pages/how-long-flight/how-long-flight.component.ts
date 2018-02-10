@@ -36,11 +36,11 @@ const mapDispatchToProps = (
   dispatch: Dispatch<Action>,
 ): HowLongFlightDispatchProps => {
   return {
+    onComplete: () => {
+      dispatch(routeToThunk(URLS.WHAT_FOOD));
+    },
     onFlightTimeChange: (selectedFlightTimeId: string) => {
       dispatch(setSelectedFlightTime(selectedFlightTimeId));
-    },
-    onNextPage: () => {
-      dispatch(routeToThunk(URLS.WHAT_FOOD));
     },
   };
 };

@@ -1,8 +1,8 @@
 import { Action } from './../actions';
 
 import {
-  FormInputStateInterface,
-} from './../../models';
+  UserInputInterface,
+} from '@chrisb-dev/holiday-shared-models';
 
 import {
   DESELECTED_FOOD_TYPE,
@@ -13,7 +13,7 @@ import {
   SetSelectedFoodTypeAction,
 } from './../';
 
-const getDefaultState = (): FormInputStateInterface => {
+const getDefaultState = (): UserInputInterface => {
   return {
     selectedFlightTimeId: null,
     selectedFoodTypeIds: [],
@@ -22,7 +22,7 @@ const getDefaultState = (): FormInputStateInterface => {
 
 export function formInputReducer(
   state = getDefaultState(), action: Action,
-): FormInputStateInterface {
+): UserInputInterface {
   switch (action.type) {
     case SET_SELECTED_FLIGHT_TIME:
       return {

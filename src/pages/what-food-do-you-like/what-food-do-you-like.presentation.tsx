@@ -15,7 +15,7 @@ export const WhatFoodDoYouLikePresentation: React.StatelessComponent<
 > =
 ({
   possibleFoodTypes, selectedFoodTypeIds,
-  onBack, onDeselectFoodType, onSelectFoodType,
+  onBack, onComplete, onDeselectFoodType, onSelectFoodType,
 }) => {
   return (
     <div>
@@ -37,18 +37,21 @@ export const WhatFoodDoYouLikePresentation: React.StatelessComponent<
           };
           return (
             <div
-              onClick={handleFoodClick}
+              onClick={ handleFoodClick }
               className={
                 `c-what-food-do-you-like__option ${additionalClassNames}`
               }
-              key={id}>
+              key={ id }>
               { name }
             </div>
           );
         })
       }
-      <button type='button' onClick={onBack}>
+      <button type='button' onClick={ onBack }>
         Go back
+      </button>
+      <button type='button' onClick={ onComplete }>
+        Next
       </button>
     </div>
   );

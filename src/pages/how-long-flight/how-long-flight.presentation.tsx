@@ -13,7 +13,7 @@ interface HowLongFlightCombinedProps
 export const HowLongFlightPresentation: React.SFC<HowLongFlightCombinedProps> =
 ({
   possibleFlightTimes, selectedFlightTimeId,
-  onNextPage, onFlightTimeChange,
+  onComplete, onFlightTimeChange,
 }) => {
   return (
     <div>
@@ -22,7 +22,7 @@ export const HowLongFlightPresentation: React.SFC<HowLongFlightCombinedProps> =
           const additionalClassNames = id === selectedFlightTimeId ?
             'c-how-long-flight__option--selected' : '';
           return (
-            <div key={ id } onClick={() => onFlightTimeChange(id)}>
+            <div key={ id } onClick={ () => onFlightTimeChange(id) }>
               <div className={
                 `c-how-long-flight__option ${additionalClassNames}
               `}>
@@ -32,7 +32,7 @@ export const HowLongFlightPresentation: React.SFC<HowLongFlightCombinedProps> =
           );
         })
       }
-      <button type='button' onClick={onNextPage}>
+      <button type='button' onClick={ onComplete }>
         Next page
       </button>
     </div>
