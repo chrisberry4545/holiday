@@ -2,10 +2,6 @@ import {
   Action,
 } from './';
 
-import {
-  FlightTimesInterface,
-} from './../../models';
-
 export interface SetSelectedFlightTimeAction extends Action {
   selectedFlightTimeId: string;
 }

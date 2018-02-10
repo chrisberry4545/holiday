@@ -1,7 +1,7 @@
 import {
-  HolidayResultInterface,
+  HolidayInterface,
 } from '@chrisb-dev/holiday-shared-models';
 
 export interface HolidayApiServiceInterface {
-  getHolidayResults: () => Promise<HolidayResultInterface[]>;
+  getHolidayResults: () => Promise<HolidayInterface[]>;
 }

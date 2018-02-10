@@ -1,6 +1,6 @@
 import {
   FlightTimesInterface,
-} from './../';
+} from '@chrisb-dev/holiday-shared-models';
 
 export interface FormOptionsStateInterface {
   possibleFlightTimes: FlightTimesInterface[];

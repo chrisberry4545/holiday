@@ -7,7 +7,6 @@ import {
 import { push } from 'react-router-redux';
 
 import {
-  FlightTimesInterface,
   StateInterface,
   URLS,
 } from './../../models';

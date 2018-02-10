@@ -10,12 +10,12 @@ import {
 
 import {
   API_URLS,
-  HolidayResultInterface,
+  HolidayInterface,
 } from '@chrisb-dev/holiday-shared-models';
 
 @injectable()
 export class HolidayApiService implements HolidayApiServiceInterface {
-  public getHolidayResults(): Promise<HolidayResultInterface[]> {
+  public getHolidayResults(): Promise<HolidayInterface[]> {
     return fetch(
       `process.env.BACKEND_URL${API_URLS.HOLIDAY_RESULTS}`,
     ).then((resp) => {

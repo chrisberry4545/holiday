@@ -4,7 +4,7 @@ import './how-long-flight.scss';
 
 import {
   FlightTimesInterface,
-} from './../../models';
+} from '@chrisb-dev/holiday-shared-models';
 
 export interface HowLongFlightStateProps {
   possibleFlightTimes: FlightTimesInterface[];
@@ -27,7 +27,7 @@ export const HowLongFlightPresentation: React.SFC<HowLongFlightCombinedProps> =
   return (
     <div>
       {
-        possibleFlightTimes.map(({ id, label }) => {
+        possibleFlightTimes.map(({ id, name }) => {
           const elementId = `flight-time-${id}`;
           const additionalClassNames = id === selectedFlightTimeId ?
             'c-how-long-flight__option--selected' : '';
@@ -36,7 +36,7 @@ export const HowLongFlightPresentation: React.SFC<HowLongFlightCombinedProps> =
               <div className={
                 `c-how-long-flight__option ${additionalClassNames}
               `}>
-                { label }
+                { name }
               </div>
             </div>
           );

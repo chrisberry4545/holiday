@@ -33,7 +33,7 @@ import {
 } from './../../pages';
 
 import {
-  HolidayResultInterface,
+  HolidayInterface,
 } from '@chrisb-dev/holiday-shared-models';
 
 import {
@@ -55,10 +55,10 @@ const initialState = {
     formOptions: {
       possibleFlightTimes: [{
         id: '1',
-        label: '1 - 2 hours',
+        name: '1 - 2 hours',
       }, {
         id: '2',
-        label: '2 - 4 hours',
+        name: '2 - 4 hours',
       }],
     },
   },
@@ -74,7 +74,7 @@ const store = createStore<StateInterface>(
 );
 
 interface SharedAppStateInterface extends ComponentState {
-  returnedData: HolidayResultInterface[];
+  returnedData: HolidayInterface[];
 }
 
 export class SharedAppComponent
