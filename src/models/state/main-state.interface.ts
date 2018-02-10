@@ -1,3 +1,9 @@
+import {
+  FormInputStateInterface,
+  FormOptionsStateInterface,
+} from './';
+
 export interface MainStateInterface {
-  counter: number;
+  formInput?: FormInputStateInterface;
+  formOptions: FormOptionsStateInterface;
 }

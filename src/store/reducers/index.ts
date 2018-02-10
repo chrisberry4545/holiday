@@ -1,17 +1,18 @@
 import { combineReducers } from 'redux';
 
 import {
-  StateInterface,
+  MainStateInterface,
 } from './../../models';
 
 import {
-  Action,
-} from './../actions';
+  formInputReducer,
+} from './form-input.reducer';
 
 import {
-  counter,
-} from './count.reducer';
+  formOptionsReducer,
+} from './form-options.reducer';
 
-export const reducer = combineReducers<StateInterface>({
-  counter,
+export const reducer = combineReducers<MainStateInterface>({
+  formInput: formInputReducer,
+  formOptions: formOptionsReducer,
 });

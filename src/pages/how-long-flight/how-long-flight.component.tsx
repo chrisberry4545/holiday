@@ -7,6 +7,7 @@ import {
 import { push } from 'react-router-redux';
 
 import {
+  FlightTimesInterface,
   StateInterface,
   URLS,
 } from './../../models';
@@ -14,6 +15,7 @@ import {
 import {
   Action,
   routeToThunk,
+  setSelectedFlightTime,
 } from './../../store';
 
 import {
@@ -26,7 +28,8 @@ const mapStateToProps = (
   state: StateInterface,
 ): HowLongFlightStateProps => {
   return {
-    count: state.main.counter,
+    possibleFlightTimes: state.main.formOptions.possibleFlightTimes,
+    selectedFlightTimeId: state.main.formInput.selectedFlightTimeId,
   };
 };
 
@@ -34,10 +37,8 @@ const mapDispatchToProps = (
   dispatch: Dispatch<Action>,
 ): HowLongFlightDispatchProps => {
   return {
-    onIncrement: () => {
-      dispatch({
-        type: 'INCREMENT',
-      });
+    onFlightTimeChange: (selectedFlightTimeId: string) => {
+      dispatch(setSelectedFlightTime(selectedFlightTimeId));
     },
     onNextPage: () => {
       dispatch(routeToThunk(URLS.WHAT_FOOD));

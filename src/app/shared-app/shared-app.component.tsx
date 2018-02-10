@@ -50,12 +50,26 @@ import createHistory from 'history/createBrowserHistory';
 const history = createHistory();
 const historyMiddleware = routerMiddleware(history);
 
+const initialState = {
+  main: {
+    formOptions: {
+      possibleFlightTimes: [{
+        id: '1',
+        label: '1 - 2 hours',
+      }, {
+        id: '2',
+        label: '2 - 4 hours',
+      }],
+    },
+  },
+} as StateInterface;
+
 const store = createStore<StateInterface>(
   combineReducers({
     main: reducer,
     router: routerReducer,
   }),
-  undefined,
+  initialState,
   applyMiddleware(historyMiddleware, thunk),
 );
 

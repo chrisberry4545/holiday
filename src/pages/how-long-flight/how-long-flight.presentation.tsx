@@ -1,11 +1,18 @@
 import * as React from 'react';
 
+import './how-long-flight.scss';
+
+import {
+  FlightTimesInterface,
+} from './../../models';
+
 export interface HowLongFlightStateProps {
-  count: number;
+  possibleFlightTimes: FlightTimesInterface[];
+  selectedFlightTimeId: string;
 }
 
 export interface HowLongFlightDispatchProps {
-  onIncrement: () => void;
+  onFlightTimeChange: (selectedFlightTimeId: string) => void;
   onNextPage: () => void;
 }
 
@@ -13,13 +20,28 @@ interface HowLongFlightCombinedProps
   extends HowLongFlightStateProps, HowLongFlightDispatchProps {}
 
 export const HowLongFlightPresentation: React.SFC<HowLongFlightCombinedProps> =
-({ count, onNextPage, onIncrement }) => {
+({
+  possibleFlightTimes, selectedFlightTimeId,
+  onNextPage, onFlightTimeChange,
+}) => {
   return (
     <div>
-      <span>{count} </span>
-      <button type='button' onClick={onIncrement}>
-        Increment
-      </button>
+      {
+        possibleFlightTimes.map(({ id, label }) => {
+          const elementId = `flight-time-${id}`;
+          const additionalClassNames = id === selectedFlightTimeId ?
+            'c-how-long-flight__option--selected' : '';
+          return (
+            <div key={ id } onClick={() => onFlightTimeChange(id)}>
+              <div className={
+                `c-how-long-flight__option ${additionalClassNames}
+              `}>
+                { label }
+              </div>
+            </div>
+          );
+        })
+      }
       <button type='button' onClick={onNextPage}>
         Next page
       </button>

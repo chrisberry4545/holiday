@@ -25,10 +25,7 @@ import { push } from 'react-router-redux';
 const mapStateToProps = (
   state: StateInterface,
 ): WhatFoodDoYouLikeStateProps => {
-  return {
-    count: state.main.counter,
-    label: 'testlabel',
-  };
+  return {};
 };
 
 const mapDispatchToProps = (

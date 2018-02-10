@@ -1,0 +1,9 @@
+.c-how-long-flight__option {
+  border: 4px solid black;
+  padding: 20px;
+  cursor: pointer;
+}
+
+  .c-how-long-flight__option--selected {
+    border-color: green;
+  }
