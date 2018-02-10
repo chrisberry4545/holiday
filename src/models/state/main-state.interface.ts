@@ -1,5 +1,6 @@
 import {
   FormOptionsStateInterface,
+  ResultsStateInterface,
 } from './';
 
 import {
@@ -9,4 +10,5 @@ import {
 export interface MainStateInterface {
   formInput?: UserInputInterface;
   formOptions: FormOptionsStateInterface;
+  results: ResultsStateInterface;
 }

@@ -1,7 +1,10 @@
 import {
   HolidayInterface,
+  UserInputInterface,
 } from '@chrisb-dev/holiday-shared-models';
 
 export interface HolidayApiServiceInterface {
-  getHolidayResults: () => Promise<HolidayInterface[]>;
+  getHolidayResults: (
+    userInput: UserInputInterface,
+  ) => Promise<HolidayInterface[]>;
 }

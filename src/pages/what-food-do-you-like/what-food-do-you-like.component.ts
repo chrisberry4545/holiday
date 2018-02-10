@@ -4,6 +4,8 @@ import {
   Dispatch,
 } from 'redux';
 
+import { ThunkAction } from 'redux-thunk';
+
 import {
   StateInterface,
   URLS,
@@ -42,7 +44,8 @@ const mapDispatchToProps = (
       dispatch(routeToThunk(URLS.HOW_LONG_FLIGHT));
     },
     onComplete: () => {
-      dispatch(sendUserInputThunk());
+      // TODO:: Find out how to do this without any
+      dispatch(sendUserInputThunk() as any);
     },
     onDeselectFoodType: (foodTypeId: string) => {
       dispatch(deselectedFoodType(foodTypeId));

@@ -23,7 +23,7 @@ import {
 const mapStateToProps = (
   state: StateInterface,
 ): ResultsStateProps => {
-  return {};
+  return state.main.results;
 };
 
 const mapDispatchToProps = (

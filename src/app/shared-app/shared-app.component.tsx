@@ -16,18 +16,6 @@ import {
 import { Provider } from 'react-redux';
 
 import {
-  TYPES,
-} from './../dependency-injection';
-
-import {
-  myContainer,
-} from './../dependency-injection/inversify.config';
-
-import {
-  HolidayApiServiceInterface,
-} from './../../services';
-
-import {
   HowLongFlightComponent,
   ResultsComponent,
   WhatFoodDoYouLikeComponent,
@@ -94,16 +82,6 @@ extends Component<Props<{}>, SharedAppStateInterface> {
     public props: Props<{}>,
   ) {
     super(props);
-    this.state = {
-      returnedData: [],
-    };
-    const holidayApiService =
-      myContainer.get<HolidayApiServiceInterface>(TYPES.HolidayApiService);
-    holidayApiService.getHolidayResults().then((returnedData) => {
-      this.setState({
-        returnedData,
-      });
-    });
   }
 
   public render() {
