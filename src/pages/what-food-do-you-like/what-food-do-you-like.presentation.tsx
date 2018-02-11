@@ -23,19 +23,19 @@ export const WhatFoodDoYouLikePresentation: React.StatelessComponent<
         What food do you like?
       </h2>
       {
-        possibleFoodTypes.map(({ name, id }) => {
+        possibleFoodTypes.map(({ name, _id }) => {
           const isFoodTypeSelected = Boolean(
             selectedFoodTypeIds.find((foodId) => (
-              foodId === id
+              foodId === _id
             )),
           );
           const additionalClassNames =  isFoodTypeSelected
             ? 'c-what-food-do-you-like__option--selected' : '';
           const handleFoodClick = () => {
             if (isFoodTypeSelected) {
-              onDeselectFoodType(id);
+              onDeselectFoodType(_id);
             } else {
-              onSelectFoodType(id);
+              onSelectFoodType(_id);
             }
           };
           return (
@@ -45,7 +45,7 @@ export const WhatFoodDoYouLikePresentation: React.StatelessComponent<
                 'o-spacing-bottom ' +
                 `c-what-food-do-you-like__option ${additionalClassNames}`
               }
-              key={ id }>
+              key={ _id }>
               { name }
             </div>
           );

@@ -21,13 +21,13 @@ export const HowLongFlightPresentation: React.SFC<HowLongFlightCombinedProps> =
         What sort of flight time do you want?
       </h2>
       {
-        possibleFlightTimes.map(({ id, name }) => {
-          const additionalClassNames = id === selectedFlightTimeId ?
+        possibleFlightTimes.map(({ _id, name }) => {
+          const additionalClassNames = _id === selectedFlightTimeId ?
             'c-how-long-flight__option--selected' : '';
           return (
             <div
-              key={ id }
-              onClick={ () => onFlightTimeChange(id) }
+              key={ _id }
+              onClick={ () => onFlightTimeChange(_id) }
               className={
                 'o-spacing-bottom ' +
                 `c-how-long-flight__option ${additionalClassNames}`

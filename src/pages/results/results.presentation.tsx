@@ -20,10 +20,10 @@ export const ResultsPresentation: React.SFC<ResultsCombinedProps> =
       {
         isLoading ? <div>Loading...</div>
         :
-        holidayResults.map((holidayResult) => (
+        holidayResults.map(({ _id, name }) => (
           <div className='o-spacing-bottom'
-            key={ holidayResult.id }>
-            { holidayResult.name }
+            key={ _id }>
+            { name }
           </div>
         ))
       }
