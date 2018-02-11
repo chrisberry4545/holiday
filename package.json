@@ -64,7 +64,8 @@
     "dev-alt": "node scripts/start.js partner-2",
     "build": "node scripts/build.js partner-1",
     "test": "node scripts/test.js --env=jsdom",
-    "start": "npm run build"
+    "start": "npm run build",
+    "lint": "./node_modules/.bin/tslint -c tslint.json 'src/**/*.ts'"
   },
   "jest": {
     "collectCoverageFrom": [
