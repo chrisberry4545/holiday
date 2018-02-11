@@ -13,7 +13,7 @@ import {
   routerReducer,
 } from 'react-router-redux';
 
-import { Provider } from 'react-redux';
+import { Provider, Store } from 'react-redux';
 
 import {
   HowLongFlightComponent,
@@ -34,46 +34,33 @@ import {
   URLS,
 } from './../../models';
 
+import {
+  myContainer,
+  TYPES,
+} from './../../app/dependency-injection/';
+
+import {
+  HolidayApiServiceInterface,
+} from './../../services';
+
 import createHistory from 'history/createBrowserHistory';
 
 const history = createHistory();
 const historyMiddleware = routerMiddleware(history);
 
-const initialState = {
-  main: {
-    formOptions: {
-      possibleFlightTimes: [{
-        id: '1',
-        name: '1 - 2 hours',
-      }, {
-        id: '2',
-        name: '2 - 4 hours',
-      }],
-      possibleFoodTypes: [{
-        id: '1',
-        name: 'Spicy',
-      }, {
-        id: '2',
-        name: 'Mediterranean',
-      }, {
-        id: '3',
-        name: 'Middle Eastern',
-      }],
-    },
-  },
-} as StateInterface;
-
-const store = createStore<StateInterface>(
-  combineReducers({
-    main: reducer,
-    router: routerReducer,
-  }),
-  initialState,
-  applyMiddleware(historyMiddleware, thunk),
-);
+const initStore = (initialState: StateInterface) => {
+  return createStore<StateInterface>(
+    combineReducers({
+      main: reducer,
+      router: routerReducer,
+    }),
+    initialState,
+    applyMiddleware(historyMiddleware, thunk),
+  );
+};
 
 interface SharedAppStateInterface extends ComponentState {
-  returnedData: HolidayInterface[];
+  store: Store<StateInterface>;
 }
 
 export class SharedAppComponent
@@ -82,11 +69,27 @@ extends Component<Props<{}>, SharedAppStateInterface> {
     public props: Props<{}>,
   ) {
     super(props);
+    this.state = {
+      store: null,
+    };
+  }
+
+  public componentDidMount() {
+    const holidayApiService =
+      myContainer.get<HolidayApiServiceInterface>(TYPES.HolidayApiService);
+    holidayApiService.getUserInputFormData().then((formOptions) => {
+      const store = initStore({
+        main: {
+          formOptions,
+        },
+      } as StateInterface);
+      this.setState({ store });
+    });
   }
 
   public render() {
-    return (
-      <Provider store={store}>
+    return this.state.store ? (
+      <Provider store={this.state.store}>
         <ConnectedRouter history={history}>
           <Switch>
             <Route exact path={ `/${URLS.HOW_LONG_FLIGHT}` }
@@ -98,6 +101,8 @@ extends Component<Props<{}>, SharedAppStateInterface> {
           </Switch>
         </ConnectedRouter>
       </Provider>
+    ) : (
+      <div>Loading data..</div>
     );
   }
 }

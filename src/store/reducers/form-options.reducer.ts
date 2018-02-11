@@ -1,15 +1,15 @@
 import { Action } from './../actions';
 
 import {
-  FormOptionsStateInterface,
-} from './../../models';
+  FormOptionsInterface,
+} from '@chrisb-dev/holiday-shared-models';
 
 import {
   SET_SELECTED_FLIGHT_TIME,
   SetSelectedFlightTimeAction,
 } from './../';
 
-const getDefaultState = (): FormOptionsStateInterface => {
+const getDefaultState = (): FormOptionsInterface => {
   return {
     possibleFlightTimes: [],
     possibleFoodTypes: [],
@@ -18,7 +18,7 @@ const getDefaultState = (): FormOptionsStateInterface => {
 
 export function formOptionsReducer(
   state = getDefaultState(), action: Action,
-): FormOptionsStateInterface {
+): FormOptionsInterface {
   switch (action.type) {
     default:
       return state;

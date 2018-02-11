@@ -10,6 +10,7 @@ import {
 
 import {
   API_URLS,
+  FormOptionsInterface,
   HolidayInterface,
   UserInputInterface,
 } from '@chrisb-dev/holiday-shared-models';
@@ -29,6 +30,14 @@ export class HolidayApiService implements HolidayApiServiceInterface {
         },
         method: 'POST',
       },
+    ).then((resp) => {
+      return resp.json();
+    });
+  }
+
+  public getUserInputFormData(): Promise<FormOptionsInterface> {
+    return fetch(
+      `process.env.BACKEND_URL${API_URLS.USER_INPUT_FORM_DATA}`,
     ).then((resp) => {
       return resp.json();
     });
