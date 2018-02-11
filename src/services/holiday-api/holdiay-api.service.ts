@@ -1,12 +1,12 @@
 import {
-  inject,
   injectable,
 } from 'inversify';
 import 'reflect-metadata';
 
 import {
   HolidayApiServiceInterface,
-} from './';
+  HttpRequestServiceInterface,
+} from './..';
 
 import {
   API_URLS,
@@ -15,31 +15,31 @@ import {
   UserInputInterface,
 } from '@chrisb-dev/holiday-shared-models';
 
+import {
+  diContainer,
+  TYPES,
+} from './../../app/dependency-injection/';
+
 @injectable()
 export class HolidayApiService implements HolidayApiServiceInterface {
+  private _httpRequestService: HttpRequestServiceInterface;
+  constructor() {
+    this._httpRequestService =
+      diContainer.get<HttpRequestServiceInterface>(TYPES.HttpRequestService);
+  }
+
   public getHolidayResults(
     userInput: UserInputInterface,
   ): Promise<HolidayInterface[]> {
-    return fetch(
+    return this._httpRequestService.post(
       `process.env.BACKEND_URL${API_URLS.HOLIDAY_RESULTS}`,
-      {
-        body: JSON.stringify(userInput),
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        method: 'POST',
-      },
-    ).then((resp) => {
-      return resp.json();
-    });
+      userInput,
+    );
   }
 
   public getUserInputFormData(): Promise<FormOptionsInterface> {
-    return fetch(
+    return this._httpRequestService.get(
       `process.env.BACKEND_URL${API_URLS.USER_INPUT_FORM_DATA}`,
-    ).then((resp) => {
-      return resp.json();
-    });
+    );
   }
 }

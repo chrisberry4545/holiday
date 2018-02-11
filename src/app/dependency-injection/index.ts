@@ -3,5 +3,5 @@ export {
 } from './types';
 
 export {
-  myContainer,
+  diContainer,
 } from './inversify.config';

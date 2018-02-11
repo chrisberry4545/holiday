@@ -6,10 +6,14 @@ import { TYPES } from './types';
 import {
   HolidayApiService,
   HolidayApiServiceInterface,
+  HttpRequestService,
+  HttpRequestServiceInterface,
 } from './../../services';
 
-const myContainer = new Container();
-myContainer.bind<HolidayApiServiceInterface>(TYPES.HolidayApiService)
+const diContainer = new Container();
+diContainer.bind<HolidayApiServiceInterface>(TYPES.HolidayApiService)
   .to(HolidayApiService);
+diContainer.bind<HttpRequestServiceInterface>(TYPES.HttpRequestService)
+  .to(HttpRequestService);
 
-export { myContainer };
+export { diContainer };

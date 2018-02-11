@@ -1,5 +1,5 @@
 // file inversify.config.ts
 
-import { myContainer } from './../dependency-injection/';
+import { diContainer } from './../dependency-injection/';
 
-export { myContainer };
+export { diContainer };

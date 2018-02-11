@@ -19,7 +19,7 @@ import {
 } from './../../models';
 
 import {
-  myContainer,
+  diContainer,
   TYPES,
 } from './../../app/dependency-injection/';
 
@@ -34,7 +34,7 @@ ThunkAction<Action, StateInterface, void>
     dispatch: Dispatch<StateInterface>, getState,
   ): Action => {
     const holidayApiService =
-      myContainer.get<HolidayApiServiceInterface>(TYPES.HolidayApiService);
+      diContainer.get<HolidayApiServiceInterface>(TYPES.HolidayApiService);
     holidayApiService.getHolidayResults(
       getState().main.formInput,
     ).then((results) => {

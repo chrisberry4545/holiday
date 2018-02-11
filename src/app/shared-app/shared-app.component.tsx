@@ -35,7 +35,7 @@ import {
 } from './../../models';
 
 import {
-  myContainer,
+  diContainer,
   TYPES,
 } from './../../app/dependency-injection/';
 
@@ -76,7 +76,7 @@ extends Component<Props<{}>, SharedAppStateInterface> {
 
   public componentDidMount() {
     const holidayApiService =
-      myContainer.get<HolidayApiServiceInterface>(TYPES.HolidayApiService);
+      diContainer.get<HolidayApiServiceInterface>(TYPES.HolidayApiService);
     holidayApiService.getUserInputFormData().then((formOptions) => {
       const store = initStore({
         main: {
