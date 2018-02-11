@@ -1,0 +1,36 @@
+$spacing-normal: $default-spacing-unit;
+$spacing-large: $default-spacing-unit * 2;
+$spacing-xlarge: $default-spacing-unit * 4;
+$spacing-xxlarge: $default-spacing-unit * 6;
+
+.o-spacing-bottom {
+  margin-bottom: $spacing-normal;
+}
+
+.o-spacing-bottom-large {
+  margin-bottom: $spacing-large;
+}
+
+.o-spacing-bottom-xlarge {
+  margin-bottom: $spacing-xlarge;
+}
+
+.o-spacing-bottom-xxlarge {
+  margin-bottom: $spacing-xxlarge;
+}
+
+.o-spacing-top {
+  margin-top: $spacing-normal;
+}
+
+.o-spacing-top-large {
+  margin-top: $spacing-large;
+}
+
+.o-spacing-top-xlarge {
+  margin-top: $spacing-xlarge;
+}
+
+.o-spacing-top-xxlarge {
+  margin-top: $spacing-xxlarge;
+}

@@ -15,13 +15,16 @@ export const ResultsPresentation: React.SFC<ResultsCombinedProps> =
   isLoading, holidayResults,
 }) => {
   return (
-    <div>
-      <h1>Results!</h1>
+    <div className='o-main-container'>
+      <h2 className='o-spacing-bottom-xlarge'>Results</h2>
       {
         isLoading ? <div>Loading...</div>
         :
         holidayResults.map((holidayResult) => (
-          <div key={ holidayResult.id }>{ holidayResult.name }</div>
+          <div className='o-spacing-bottom'
+            key={ holidayResult.id }>
+            { holidayResult.name }
+          </div>
         ))
       }
     </div>

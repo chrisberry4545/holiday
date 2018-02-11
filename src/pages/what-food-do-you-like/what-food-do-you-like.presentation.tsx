@@ -18,7 +18,10 @@ export const WhatFoodDoYouLikePresentation: React.StatelessComponent<
   onBack, onComplete, onDeselectFoodType, onSelectFoodType,
 }) => {
   return (
-    <div>
+    <div className='o-main-container'>
+      <h2 className='o-spacing-bottom-xxlarge'>
+        What food do you like?
+      </h2>
       {
         possibleFoodTypes.map(({ name, id }) => {
           const isFoodTypeSelected = Boolean(
@@ -39,6 +42,7 @@ export const WhatFoodDoYouLikePresentation: React.StatelessComponent<
             <div
               onClick={ handleFoodClick }
               className={
+                'o-spacing-bottom ' +
                 `c-what-food-do-you-like__option ${additionalClassNames}`
               }
               key={ id }>
@@ -47,12 +51,20 @@ export const WhatFoodDoYouLikePresentation: React.StatelessComponent<
           );
         })
       }
-      <button type='button' onClick={ onBack }>
-        Go back
-      </button>
-      <button type='button' onClick={ onComplete }>
-        Next
-      </button>
+      <div className='o-spacing-top-xlarge'>
+        <button
+          className='c-btn c-btn--primary'
+          type='button'
+          onClick={ onBack }>
+          Back
+        </button>
+        <button
+          className='c-btn c-btn--primary u-float-right'
+          type='button'
+          onClick={ onComplete }>
+          Next
+        </button>
+      </div>
     </div>
   );
 };
