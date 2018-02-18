@@ -1,13 +1,2 @@
 @import './../../styles/partner/<!--partnerName--settings-->';
 @import './../../styles/_tools';
-
-.c-what-food-do-you-like__option {
-  border: 4px solid black;
-  padding: 20px;
-  cursor: pointer;
-  @include selection-border-hover();
-}
-
-  .c-what-food-do-you-like__option--selected {
-    border-color: $selection-color;
-  }

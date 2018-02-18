@@ -10,6 +10,10 @@ import {
 interface WhatFoodDoYouLikeCombinedProps
   extends WhatFoodDoYouLikeStateProps, WhatFoodDoYouLikeDispatchProps {}
 
+import {
+  MultiSelectorPresentation,
+} from './../../elements';
+
 export const WhatFoodDoYouLikePresentation: React.StatelessComponent<
   WhatFoodDoYouLikeCombinedProps
 > =
@@ -22,35 +26,15 @@ export const WhatFoodDoYouLikePresentation: React.StatelessComponent<
       <h2 className='o-spacing-bottom-xxlarge'>
         What food do you like?
       </h2>
-      {
-        possibleFoodTypes.map(({ name, _id }) => {
-          const isFoodTypeSelected = Boolean(
-            selectedFoodTypeIds.find((foodId) => (
-              foodId === _id
-            )),
-          );
-          const additionalClassNames =  isFoodTypeSelected
-            ? 'c-what-food-do-you-like__option--selected' : '';
-          const handleFoodClick = () => {
-            if (isFoodTypeSelected) {
-              onDeselectFoodType(_id);
-            } else {
-              onSelectFoodType(_id);
-            }
-          };
-          return (
-            <div
-              onClick={ handleFoodClick }
-              className={
-                'o-spacing-bottom ' +
-                `c-what-food-do-you-like__option ${additionalClassNames}`
-              }
-              key={ _id }>
-              { name }
-            </div>
-          );
-        })
-      }
+      <MultiSelectorPresentation
+        choices={ possibleFoodTypes.map((foodType) => ({
+          _id: foodType._id,
+          label: foodType.name,
+        })) }
+        selectedIds= { selectedFoodTypeIds }
+        onSelected={ (id) => onSelectFoodType(id) }
+        onDeselected={ (id) => onDeselectFoodType(id) }
+      />
       <div className='o-spacing-top-xlarge'>
         <button
           className='c-btn c-btn--primary'
