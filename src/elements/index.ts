@@ -1,3 +1,1 @@
-export * from './multi-selector';
-
-export * from './single-selector';
+export * from './selector-item';

@@ -9,7 +9,7 @@ import {
 
 import {
   SingleSelectorPresentation,
-} from './../../elements';
+} from './../../molecules';
 
 interface HowLongFlightCombinedProps
   extends HowLongFlightStateProps, HowLongFlightDispatchProps {}

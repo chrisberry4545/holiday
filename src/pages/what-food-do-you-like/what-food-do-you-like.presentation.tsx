@@ -12,7 +12,7 @@ interface WhatFoodDoYouLikeCombinedProps
 
 import {
   MultiSelectorPresentation,
-} from './../../elements';
+} from './../../molecules';
 
 export const WhatFoodDoYouLikePresentation: React.StatelessComponent<
   WhatFoodDoYouLikeCombinedProps

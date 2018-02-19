@@ -11,8 +11,11 @@ import {
 
 const getDefaultState = (): FormOptionsInterface => {
   return {
+    possibleActivities: [],
+    possibleCostRanges: [],
     possibleFlightTimes: [],
     possibleFoodTypes: [],
+    possibleTemperatures: [],
   };
 };
 

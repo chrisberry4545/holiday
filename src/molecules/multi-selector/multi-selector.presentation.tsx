@@ -1,11 +1,13 @@
 import * as React from 'react';
 
-import './multi-selector.scss';
-
 import {
   MultiSelectorDispatchProps,
   MultiSelectorStateProps,
 } from './';
+
+import {
+  SelectorItemPresentation,
+} from './../../elements';
 
 interface MultiSelectorCombinedProps
   extends MultiSelectorStateProps, MultiSelectorDispatchProps {}
@@ -27,15 +29,13 @@ export const MultiSelectorPresentation: React.SFC<MultiSelectorCombinedProps> =
       { choices.map((choice) => {
         const isSelected = selectedIds.indexOf(choice._id) > -1;
         return (
-          <div key={ choice._id }
-            onClick={ () => handleClick(choice._id, isSelected) }
-            className={ 'o-spacing-bottom ' +
-              'c-multi-selector__option ' +
-              (isSelected ? 'c-multi-selector__option--selected' : '')
-            }
-          >
-            { choice.label }
-          </div>
+          <SelectorItemPresentation
+            key={ choice._id }
+            _id={ choice._id }
+            label={ choice.label }
+            isSelected={ isSelected }
+            onClicked={ (id: string) => handleClick(id, isSelected) }
+          />
         );
       }) }
     </div>
