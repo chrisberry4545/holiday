@@ -13,7 +13,7 @@ import {
 
 import {
   Action,
-  routeToThunk,
+  nextPage,
   setSelectedFlightTime,
 } from './../../store';
 
@@ -37,7 +37,7 @@ const mapDispatchToProps = (
 ): HowLongFlightDispatchProps => {
   return {
     onComplete: () => {
-      dispatch(routeToThunk(URLS.WHAT_FOOD));
+      dispatch(nextPage() as any);
     },
     onFlightTimeChange: (selectedFlightTimeId: string) => {
       dispatch(setSelectedFlightTime(selectedFlightTimeId));

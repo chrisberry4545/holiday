@@ -4,4 +4,5 @@ import {
 
 export interface StateInterface {
   main: MainStateInterface;
+  router: any;
 }

@@ -18,7 +18,10 @@ import { Provider, Store } from 'react-redux';
 import {
   HowLongFlightComponent,
   ResultsComponent,
-  WhatFoodDoYouLikeComponent,
+  WhatActivitiesComponent,
+  WhatCostComponent,
+  WhatFoodComponent,
+  WhatTemperatureComponent,
 } from './../../pages';
 
 import {
@@ -95,9 +98,15 @@ extends Component<Props<{}>, SharedAppStateInterface> {
             <Route exact path={ `/${URLS.HOW_LONG_FLIGHT}` }
               component={ HowLongFlightComponent } />
             <Route path={ `/${URLS.WHAT_FOOD}` }
-              component={ WhatFoodDoYouLikeComponent } />
-            <Route path={ `/${URLS.RESULTS}` }
-              component={ ResultsComponent } />
+              component={ WhatFoodComponent } />
+            <Route path={ `/${URLS.WHAT_ACTIVITIES}` }
+              component={ WhatActivitiesComponent } />
+            <Route path={ `/${URLS.WHAT_COST}` }
+              component={ WhatCostComponent } />
+            <Route path={ `/${URLS.WHAT_TEMPERATURE}` }
+              component={ WhatTemperatureComponent } />
+              <Route path={ `/${URLS.RESULTS}` }
+                component={ ResultsComponent } />
           </Switch>
         </ConnectedRouter>
       </Provider>

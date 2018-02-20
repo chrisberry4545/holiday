@@ -1,39 +1,39 @@
 import * as React from 'react';
 
-import './what-food-do-you-like.scss';
+import './what-activities.scss';
 
 import {
-  WhatFoodDoYouLikeDispatchProps,
-  WhatFoodDoYouLikeStateProps,
+  WhatActivitiesDispatchProps,
+  WhatActivitiesStateProps,
 } from '.';
 
-interface WhatFoodDoYouLikeCombinedProps
-  extends WhatFoodDoYouLikeStateProps, WhatFoodDoYouLikeDispatchProps {}
+interface WhatActivitiesCombinedProps
+  extends WhatActivitiesStateProps, WhatActivitiesDispatchProps {}
 
 import {
   MultiSelectorPresentation,
 } from './../../molecules';
 
-export const WhatFoodDoYouLikePresentation: React.StatelessComponent<
-  WhatFoodDoYouLikeCombinedProps
+export const WhatActivitiesPresentation: React.StatelessComponent<
+  WhatActivitiesCombinedProps
 > =
 ({
-  possibleFoodTypes, selectedFoodTypeIds,
-  onBack, onComplete, onDeselectFoodType, onSelectFoodType,
+  possibleActivityCategories, selectedActivityTypeIds,
+  onBack, onComplete, onDeselectActivity, onSelectActivity,
 }) => {
   return (
     <div className='o-main-container'>
       <h2 className='o-spacing-bottom-xxlarge'>
-        What food do you like?
+        What activities?
       </h2>
       <MultiSelectorPresentation
-        choices={ possibleFoodTypes.map((foodType) => ({
+        choices={ possibleActivityCategories.map((foodType) => ({
           _id: foodType._id,
           label: foodType.name,
         })) }
-        selectedIds= { selectedFoodTypeIds }
-        onSelected={ (id) => onSelectFoodType(id) }
-        onDeselected={ (id) => onDeselectFoodType(id) }
+        selectedIds= { selectedActivityTypeIds }
+        onSelected={ (id) => onSelectActivity(id) }
+        onDeselected={ (id) => onDeselectActivity(id) }
       />
       <div className='o-spacing-top-xlarge'>
         <button

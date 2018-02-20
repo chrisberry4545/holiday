@@ -9,7 +9,8 @@ import {
 
 import {
   Action,
-  routeToThunk,
+  backAPage,
+  nextPage,
   setHolidayResults,
 } from './../../store/';
 
@@ -40,6 +41,6 @@ ThunkAction<Action, StateInterface, void>
     ).then((results) => {
       return dispatch(setHolidayResults(results));
     });
-    return dispatch(routeToThunk(URLS.RESULTS));
+    return dispatch(nextPage());
   };
 };

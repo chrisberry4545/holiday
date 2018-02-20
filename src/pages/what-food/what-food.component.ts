@@ -8,28 +8,28 @@ import { ThunkAction } from 'redux-thunk';
 
 import {
   StateInterface,
-  URLS,
 } from './../../models';
 
 import {
   Action,
+  backAPage,
   deselectedFoodType,
-  routeToThunk,
+  nextPage,
   sendUserInputThunk,
   setSelectedFoodType,
 } from './../../store';
 
 import {
-  WhatFoodDoYouLikeDispatchProps,
-  WhatFoodDoYouLikePresentation,
-  WhatFoodDoYouLikeStateProps,
+  WhatFoodDispatchProps,
+  WhatFoodPresentation,
+  WhatFoodStateProps,
 } from './';
 
 import { push } from 'react-router-redux';
 
 const mapStateToProps = (
   state: StateInterface,
-): WhatFoodDoYouLikeStateProps => {
+): WhatFoodStateProps => {
   return {
     possibleFoodTypes: state.main.formOptions.possibleFoodTypes,
     selectedFoodTypeIds: state.main.formInput.selectedFoodTypeIds,
@@ -38,14 +38,14 @@ const mapStateToProps = (
 
 const mapDispatchToProps = (
   dispatch: Dispatch<Action>,
-): WhatFoodDoYouLikeDispatchProps => {
+): WhatFoodDispatchProps => {
   return {
     onBack: () => {
-      dispatch(routeToThunk(URLS.HOW_LONG_FLIGHT));
+      dispatch(backAPage() as any);
     },
     onComplete: () => {
       // TODO:: Find out how to do this without any
-      dispatch(sendUserInputThunk() as any);
+      dispatch(nextPage() as any);
     },
     onDeselectFoodType: (foodTypeId: string) => {
       dispatch(deselectedFoodType(foodTypeId));
@@ -56,7 +56,7 @@ const mapDispatchToProps = (
   };
 };
 
-export const WhatFoodDoYouLikeComponent = connect(
+export const WhatFoodComponent = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(WhatFoodDoYouLikePresentation);
+)(WhatFoodPresentation);
