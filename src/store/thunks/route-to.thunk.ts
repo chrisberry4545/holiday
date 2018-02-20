@@ -16,6 +16,10 @@ import {
   Action,
 } from './../../store/actions';
 
+import {
+  sendUserInputThunk,
+} from './';
+
 const pageOrder = [
   URLS.HOW_LONG_FLIGHT,
   URLS.WHAT_ACTIVITIES,
@@ -49,6 +53,9 @@ ThunkAction<Action, StateInterface, void>
   ): Action => {
     const currentPageIndex = getPageNumber(getState().router.location.pathname);
     const nextPageIndex = currentPageIndex + 1;
+    if (nextPageIndex === pageOrder.length - 1) {
+      return dispatch(sendUserInputThunk() as any);
+    }
     return dispatch(push(pageOrder[nextPageIndex]));
   };
 };
