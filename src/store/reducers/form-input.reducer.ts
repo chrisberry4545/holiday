@@ -7,17 +7,15 @@ import {
 import {
   DESELECT_ACTIVITY_CATEGORY,
   DeselectActivityCategoryAction,
-  DESELECTED_FOOD_TYPE,
-  DeselectSelectedFoodTypeAction,
   SET_SELECTED_ACTIVITY_CATEGORY,
   SET_SELECTED_COST_RANGE,
   SET_SELECTED_FLIGHT_TIME,
-  SET_SELECTED_FOOD_TYPE,
+  SET_SELECTED_FOOD_IMPORTANCE,
   SET_SELECTED_TEMPERATURE_RANGE,
   SetSelectedActivityCategoryAction,
   SetSelectedCostRangeAction,
   SetSelectedFlightTimeAction,
-  SetSelectedFoodTypeAction,
+  SetSelectedFoodImportanceAction,
   SetSelectedTemperatureRange,
 } from './../';
 
@@ -26,7 +24,8 @@ const getDefaultState = (): UserInputInterface => {
     selectedActivityTypeIds: [],
     selectedCostRangeId: null,
     selectedFlightTimeId: null,
-    selectedFoodTypeIds: [],
+    selectedFoodImportanceId: null,
+    selectedMonthNumber: null,
     selectedTemperatureId: null,
   };
 };
@@ -42,20 +41,11 @@ export function formInputReducer(
           .selectedFlightTimeId,
       };
 
-    case SET_SELECTED_FOOD_TYPE:
+    case SET_SELECTED_FOOD_IMPORTANCE:
       return {
         ...state,
-        selectedFoodTypeIds: [
-          ...state.selectedFoodTypeIds,
-          (action as SetSelectedFoodTypeAction).selectedFoodTypeId,
-        ],
-      };
-    case DESELECTED_FOOD_TYPE:
-      return {
-        ...state,
-        selectedFoodTypeIds: state.selectedFoodTypeIds.filter((id) => (
-          id !== (action as DeselectSelectedFoodTypeAction).deselectedFoodTypeId
-        )),
+        selectedFoodImportanceId: (action as SetSelectedFoodImportanceAction)
+          .selectedFoodImportanceId,
       };
 
     case SET_SELECTED_COST_RANGE:

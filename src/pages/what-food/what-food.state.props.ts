@@ -1,8 +1,8 @@
 import {
-  FoodTypeInterface,
+  FoodImportanceInterface,
 } from '@chrisb-dev/holiday-shared-models';
 
 export interface WhatFoodStateProps {
-  possibleFoodTypes: FoodTypeInterface[];
-  selectedFoodTypeIds: string[];
+  possibleFoodImportanceOptions: FoodImportanceInterface[];
+  selectedFoodImportanceId: string;
 }

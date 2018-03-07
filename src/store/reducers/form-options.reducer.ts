@@ -14,7 +14,7 @@ const getDefaultState = (): FormOptionsInterface => {
     possibleActivities: [],
     possibleCostRanges: [],
     possibleFlightTimes: [],
-    possibleFoodTypes: [],
+    possibleFoodImportantOptions: [],
     possibleTemperatures: [],
   };
 };

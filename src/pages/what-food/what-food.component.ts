@@ -13,10 +13,9 @@ import {
 import {
   Action,
   backAPage,
-  deselectedFoodType,
   nextPage,
   sendUserInputThunk,
-  setSelectedFoodType,
+  setSelectedFoodImportance,
 } from './../../store';
 
 import {
@@ -31,8 +30,9 @@ const mapStateToProps = (
   state: StateInterface,
 ): WhatFoodStateProps => {
   return {
-    possibleFoodTypes: state.main.formOptions.possibleFoodTypes,
-    selectedFoodTypeIds: state.main.formInput.selectedFoodTypeIds,
+    possibleFoodImportanceOptions:
+      state.main.formOptions.possibleFoodImportantOptions,
+    selectedFoodImportanceId: state.main.formInput.selectedFoodImportanceId,
   };
 };
 
@@ -47,11 +47,8 @@ const mapDispatchToProps = (
       // TODO:: Find out how to do this without any
       dispatch(nextPage() as any);
     },
-    onDeselectFoodType: (foodTypeId: string) => {
-      dispatch(deselectedFoodType(foodTypeId));
-    },
-    onSelectFoodType: (foodTypeId: string) => {
-      dispatch(setSelectedFoodType(foodTypeId));
+    onSelectFoodImportance: (foodTypeId: string) => {
+      dispatch(setSelectedFoodImportance(foodTypeId));
     },
   };
 };
