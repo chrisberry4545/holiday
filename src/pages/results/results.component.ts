@@ -12,6 +12,8 @@ import {
 
 import {
   Action,
+  goToNextHolidayResult,
+  goToPreviousHolidayResult,
 } from './../../store';
 
 import {
@@ -29,7 +31,14 @@ const mapStateToProps = (
 const mapDispatchToProps = (
   dispatch: Dispatch<Action>,
 ): ResultsDispatchProps => {
-  return {};
+  return {
+    onNextHoliday: () => {
+      dispatch(goToNextHolidayResult());
+    },
+    onPreviousHoliday: () => {
+      dispatch(goToPreviousHolidayResult());
+    },
+  };
 };
 
 export const ResultsComponent = connect(

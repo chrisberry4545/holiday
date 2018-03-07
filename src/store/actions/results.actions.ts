@@ -18,3 +18,17 @@ export function setHolidayResults(
     type: SET_HOLIDAY_RESULTS,
   };
 }
+
+export const GO_TO_NEXT_HOLIDAY_RESULT = 'GO_TO_NEXT_HOLIDAY_RESULT';
+export function goToNextHolidayResult(): Action {
+  return {
+    type: GO_TO_NEXT_HOLIDAY_RESULT,
+  };
+}
+
+export const GO_TO_PREVIOUS_HOLIDAY_RESULT = 'GO_TO_PREVIOUS_HOLIDAY_RESULT';
+export function goToPreviousHolidayResult(): Action {
+  return {
+    type: GO_TO_PREVIOUS_HOLIDAY_RESULT,
+  };
+}

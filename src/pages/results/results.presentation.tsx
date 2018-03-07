@@ -7,12 +7,17 @@ import {
   ResultsStateProps,
 } from './';
 
+import {
+  HolidayResultPresentation,
+} from './../../organisms';
+
 interface ResultsCombinedProps
   extends ResultsStateProps, ResultsDispatchProps {}
 
 export const ResultsPresentation: React.SFC<ResultsCombinedProps> =
 ({
-  isLoading, holidayResults,
+  isLoading, currentHoliday, hasPreviousHoliday, hasNextHoliday,
+  onPreviousHoliday, onNextHoliday,
 }) => {
   return (
     <div className='o-main-container'>
@@ -20,13 +25,31 @@ export const ResultsPresentation: React.SFC<ResultsCombinedProps> =
       {
         isLoading ? <div>Loading...</div>
         :
-        holidayResults.map(({ _id, name }) => (
-          <div className='o-spacing-bottom'
-            key={ _id }>
-            { name }
-          </div>
-        ))
+        !currentHoliday ? <div>No results found...</div>
+        :
+        <HolidayResultPresentation
+          holidayResult={ currentHoliday } />
       }
+      <div className='o-spacing-top-xlarge'>
+        {
+          hasPreviousHoliday ?
+            <button
+            className='c-btn c-btn--primary'
+            type='button'
+            onClick={ onPreviousHoliday }>
+            Previous
+          </button> : ''
+        }
+        {
+          hasNextHoliday ?
+          <button
+            className='c-btn c-btn--primary u-float-right'
+            type='button'
+            onClick={ onNextHoliday }>
+            Next
+          </button> : ''
+        }
+      </div>
     </div>
   );
 };

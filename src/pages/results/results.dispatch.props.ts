@@ -1,1 +1,4 @@
-export interface ResultsDispatchProps {}
+export interface ResultsDispatchProps {
+  onPreviousHoliday: () => void;
+  onNextHoliday: () => void;
+}
