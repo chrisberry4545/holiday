@@ -1,0 +1,27 @@
+@import './../../styles/partner/<!--partnerName--settings-->';
+@import './../../styles/_tools';
+
+.c-landing {
+  background-image: $landing-background-color;
+  min-height: 100vh;
+  text-align: center;
+}
+
+  .c-landing__main {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-110px);
+    width: 100%;
+  }
+
+  .c-landing__content {
+    padding: 0 30px;
+    margin: auto;
+    max-width: 700px;
+  }
+
+  .c-landing__start-journey-btn {
+    height: 70px;
+    width: 210px;
+  }

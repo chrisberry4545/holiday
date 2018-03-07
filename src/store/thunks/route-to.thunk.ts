@@ -21,6 +21,7 @@ import {
 } from './';
 
 const pageOrder = [
+  URLS.LANDING,
   URLS.HOW_LONG_FLIGHT,
   URLS.WHAT_ACTIVITIES,
   URLS.WHAT_COST,

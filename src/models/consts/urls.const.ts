@@ -1,5 +1,6 @@
 export const URLS = {
-  HOW_LONG_FLIGHT: '',
+  HOW_LONG_FLIGHT: 'flight-times',
+  LANDING: '',
   RESULTS: 'results',
   WHAT_ACTIVITIES: 'what-activities',
   WHAT_COST: 'what-cost',

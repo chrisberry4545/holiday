@@ -3,6 +3,10 @@ export {
 } from './how-long-flight/';
 
 export {
+  LandingComponent,
+} from './landing';
+
+export {
   ResultsComponent,
 } from './results/results.component';
 

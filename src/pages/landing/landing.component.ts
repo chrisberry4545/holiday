@@ -8,25 +8,22 @@ import { push } from 'react-router-redux';
 
 import {
   StateInterface,
-  URLS,
 } from './../../models';
 
 import {
   Action,
-  backAPage,
   nextPage,
-  setSelectedFlightTime,
 } from './../../store';
 
 import {
-  HowLongFlightDispatchProps,
-  HowLongFlightPresentation,
-  HowLongFlightStateProps,
+  LandingDispatchProps,
+  LandingPresentation,
+  LandingStateProps,
 } from './';
 
 const mapStateToProps = (
   state: StateInterface,
-): HowLongFlightStateProps => {
+): LandingStateProps => {
   return {
     possibleFlightTimes: state.main.formOptions.possibleFlightTimes,
     selectedFlightTimeId: state.main.formInput.selectedFlightTimeId,
@@ -35,21 +32,15 @@ const mapStateToProps = (
 
 const mapDispatchToProps = (
   dispatch: Dispatch<Action>,
-): HowLongFlightDispatchProps => {
+): LandingDispatchProps => {
   return {
-    onBack: () => {
-      dispatch(backAPage() as any);
-    },
-    onComplete: () => {
+    onStartJourney: () => {
       dispatch(nextPage() as any);
-    },
-    onFlightTimeChange: (selectedFlightTimeId: string) => {
-      dispatch(setSelectedFlightTime(selectedFlightTimeId));
     },
   };
 };
 
-export const HowLongFlightComponent = connect(
+export const LandingComponent = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(HowLongFlightPresentation);
+)(LandingPresentation);

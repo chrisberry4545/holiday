@@ -17,6 +17,7 @@ import { Provider, Store } from 'react-redux';
 
 import {
   HowLongFlightComponent,
+  LandingComponent,
   ResultsComponent,
   WhatActivitiesComponent,
   WhatCostComponent,
@@ -95,7 +96,9 @@ extends Component<Props<{}>, SharedAppStateInterface> {
       <Provider store={this.state.store}>
         <ConnectedRouter history={history}>
           <Switch>
-            <Route exact path={ `/${URLS.HOW_LONG_FLIGHT}` }
+            <Route exact path={ `/${URLS.LANDING}` }
+              component={ LandingComponent } />
+            <Route path={ `/${URLS.HOW_LONG_FLIGHT}` }
               component={ HowLongFlightComponent } />
             <Route path={ `/${URLS.WHAT_FOOD}` }
               component={ WhatFoodComponent } />
