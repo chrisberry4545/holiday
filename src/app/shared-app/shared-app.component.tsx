@@ -2,6 +2,8 @@ import { Component, ComponentState, Props } from 'react';
 import * as React from 'react';
 import './shared-app.component.scss';
 
+import * as RouterTransitions from 'react-router-transition';
+
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import thunk from 'redux-thunk';
 
@@ -63,6 +65,25 @@ const initStore = (initialState: StateInterface) => {
   );
 };
 
+function glide(val) {
+  return RouterTransitions.spring(val, {
+    damping: 24,
+    stiffness: 174,
+  });
+}
+
+const pageTransitions = {
+  atActive: {
+    offset: glide(0),
+  },
+  atEnter: {
+    offset: 100,
+  },
+  atLeave: {
+    offset: glide(-100),
+  },
+};
+
 interface SharedAppStateInterface extends ComponentState {
   store: Store<StateInterface>;
 }
@@ -95,7 +116,12 @@ extends Component<Props<{}>, SharedAppStateInterface> {
     return this.state.store ? (
       <Provider store={this.state.store}>
         <ConnectedRouter history={history}>
-          <Switch>
+          <RouterTransitions.AnimatedSwitch
+            { ...pageTransitions }
+            mapStyles={ (styles) => ({
+              transform: `translateX(${styles.offset}%)`,
+            }) }
+            className='c-app__switch-wrapper'>
             <Route exact path={ `/${URLS.LANDING}` }
               component={ LandingComponent } />
             <Route path={ `/${URLS.HOW_LONG_FLIGHT}` }
@@ -110,7 +136,7 @@ extends Component<Props<{}>, SharedAppStateInterface> {
               component={ WhatTemperatureComponent } />
               <Route path={ `/${URLS.RESULTS}` }
                 component={ ResultsComponent } />
-          </Switch>
+          </RouterTransitions.AnimatedSwitch>
         </ConnectedRouter>
       </Provider>
     ) : (
