@@ -7,12 +7,13 @@ import {
 import { push } from 'react-router-redux';
 
 import {
+  PAGE_ORDER,
   StateInterface,
+  URLS,
 } from './../../models';
 
 import {
   Action,
-  nextPage,
 } from './../../store';
 
 import {
@@ -35,7 +36,7 @@ const mapDispatchToProps = (
 ): LandingDispatchProps => {
   return {
     onStartJourney: () => {
-      dispatch(nextPage() as any);
+      dispatch(push(`${URLS.APP.url}/${PAGE_ORDER[1].url}`));
     },
   };
 };

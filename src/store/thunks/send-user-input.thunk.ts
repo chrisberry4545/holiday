@@ -39,6 +39,6 @@ ThunkAction<Action, StateInterface, void>
     ).then((results) => {
       return dispatch(setHolidayResults(results));
     });
-    return dispatch(push(URLS.RESULTS));
+    return dispatch(push(`${URLS.RESULTS.url}`));
   };
 };

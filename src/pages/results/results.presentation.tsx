@@ -20,7 +20,7 @@ export const ResultsPresentation: React.SFC<ResultsCombinedProps> =
   onPreviousHoliday, onNextHoliday,
 }) => {
   return (
-    <div className='o-main-container'>
+    <div className='o-main-container c-results transition-item'>
       <h2 className='o-spacing-bottom-xlarge'>Results</h2>
       {
         isLoading ? <div>Loading...</div>
@@ -32,22 +32,22 @@ export const ResultsPresentation: React.SFC<ResultsCombinedProps> =
       }
       <div className='o-spacing-top-xlarge'>
         {
-          hasPreviousHoliday ?
+          hasPreviousHoliday &&
             <button
             className='c-btn c-btn--primary'
             type='button'
             onClick={ onPreviousHoliday }>
             Previous
-          </button> : ''
+          </button>
         }
         {
-          hasNextHoliday ?
+          hasNextHoliday &&
           <button
             className='c-btn c-btn--primary u-float-right'
             type='button'
             onClick={ onNextHoliday }>
             Next
-          </button> : ''
+          </button>
         }
       </div>
     </div>

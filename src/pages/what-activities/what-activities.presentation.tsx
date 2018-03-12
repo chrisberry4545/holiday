@@ -22,7 +22,7 @@ export const WhatActivitiesPresentation: React.StatelessComponent<
   onBack, onComplete, onDeselectActivity, onSelectActivity,
 }) => {
   return (
-    <div className='o-main-container'>
+    <div className={'o-main-container c-what-activities transition-item'}>
       <h2 className='o-spacing-bottom-xxlarge'>
         What activities?
       </h2>

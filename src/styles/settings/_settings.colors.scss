@@ -2,7 +2,9 @@ $primary-color: #50a1ff !default;
 $button-primary-text-color: #FFFFFF !default;
 $selection-color: $primary-color !default;
 
-$text-color-main: transparentize(hsl(0, 0%, 0%), 0.3);
-$text-color-titles: #292A31;
+$text-color-main: transparentize(rgb(0, 0, 0), 0.3) !default;
+$text-color-titles: #292A31 !default;
+$nav-link-color: $text-color-main !default;
+$nav-link-color-selected: #000000;
 
 $landing-background-color: linear-gradient(120deg, #f6d365 0%, #fda085 100%) !default;

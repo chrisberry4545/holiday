@@ -20,7 +20,8 @@ export const HowLongFlightPresentation: React.SFC<HowLongFlightCombinedProps> =
   onBack, onComplete, onFlightTimeChange,
 }) => {
   return (
-    <div className='o-main-container'>
+    <div
+      className={ 'c-how-long-flight o-main-container transition-item'}>
       <h2 className='o-spacing-bottom-xxlarge'>
         What sort of flight time do you want?
       </h2>

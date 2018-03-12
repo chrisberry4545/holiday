@@ -2,7 +2,7 @@ h1, h2, h3, h4, h5 {
   margin: 0;
   font-family: $default-font-family;
   color: $text-color-titles;
-  font-weight: 200;
+  font-weight: $font-weight-light;
 }
 
 h1 {

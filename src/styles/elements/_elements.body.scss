@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: $default-font-family;
   color: $text-color-main;
-  font-weight: 300;
+  font-weight: $font-weight-normal;
   min-height: 100vh;
   min-width: 100vw;
 }

@@ -1,0 +1,22 @@
+@import './../../styles/partner/<!--partnerName--settings-->';
+@import './../../styles/_tools';
+
+.c-navigation {
+  width: 100%;
+  padding: $default-spacing-unit * 4;
+}
+
+  .c-navigation__link {
+    color: $nav-link-color;
+    display: inline-block;
+    margin-right: 20px;
+    cursor: pointer;
+    @include hover-transition(color);
+    &:hover {
+      color: $nav-link-color-selected;
+    }
+  }
+
+    .c-navigation__link--selected {
+      color: $nav-link-color-selected;
+    }

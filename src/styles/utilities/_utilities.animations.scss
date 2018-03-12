@@ -1,0 +1,11 @@
+.transition-wrapper {
+  position: relative;
+  z-index: 1;
+
+  .transition-item {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+}

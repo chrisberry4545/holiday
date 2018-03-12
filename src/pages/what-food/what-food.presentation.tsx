@@ -22,7 +22,7 @@ export const WhatFoodPresentation: React.StatelessComponent<
   onBack, onComplete, onSelectFoodImportance,
 }) => {
   return (
-    <div className='o-main-container'>
+    <div className={ 'o-main-container c-what-food transition-item' }>
       <h2 className='o-spacing-bottom-xxlarge'>
         What food do you like?
       </h2>

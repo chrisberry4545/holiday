@@ -1,6 +1,7 @@
 import { push } from 'react-router-redux';
 
 import {
+  PAGE_ORDER,
   StateInterface,
   URLS,
 } from './../../models';
@@ -20,18 +21,10 @@ import {
   sendUserInputThunk,
 } from './';
 
-const pageOrder = [
-  URLS.LANDING,
-  URLS.HOW_LONG_FLIGHT,
-  URLS.WHAT_ACTIVITIES,
-  URLS.WHAT_COST,
-  URLS.WHAT_FOOD,
-  URLS.WHAT_TEMPERATURE,
-  URLS.RESULTS,
-];
-
 const getPageNumber = (url: string) => {
-  return pageOrder.findIndex((pageUrl) => `/${pageUrl}` === url);
+  return PAGE_ORDER.findIndex((pageUrl) => (
+    `/${URLS.APP.url}/${pageUrl.url}` === url
+  ));
 };
 
 export const backAPage: ActionCreator<
@@ -42,7 +35,7 @@ ThunkAction<Action, StateInterface, void>
   ): Action => {
     const currentPageIndex = getPageNumber(getState().router.location.pathname);
     const previousPageIndex = currentPageIndex - 1;
-    return dispatch(push(pageOrder[previousPageIndex]));
+    return dispatch(push(`${PAGE_ORDER[previousPageIndex].url}`));
   };
 };
 
@@ -54,9 +47,9 @@ ThunkAction<Action, StateInterface, void>
   ): Action => {
     const currentPageIndex = getPageNumber(getState().router.location.pathname);
     const nextPageIndex = currentPageIndex + 1;
-    if (nextPageIndex === pageOrder.length - 1) {
+    if (nextPageIndex === PAGE_ORDER.length - 1) {
       return dispatch(sendUserInputThunk() as any);
     }
-    return dispatch(push(pageOrder[nextPageIndex]));
+    return dispatch(push(`${PAGE_ORDER[nextPageIndex].url}`));
   };
 };

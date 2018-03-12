@@ -2,9 +2,13 @@
 @import './../../styles/_tools';
 
 .c-landing {
-  background-image: $landing-background-color;
   min-height: 100vh;
   text-align: center;
+  background-image: $landing-background-color;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  height: 100vh;
 }
 
   .c-landing__main {
