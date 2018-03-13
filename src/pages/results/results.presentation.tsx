@@ -20,7 +20,7 @@ export const ResultsPresentation: React.SFC<ResultsCombinedProps> =
   onPreviousHoliday, onNextHoliday,
 }) => {
   return (
-    <div className='o-main-container c-results transition-item'>
+    <div className='o-main-container c-results'>
       <h2 className='o-spacing-bottom-xlarge'>Results</h2>
       {
         isLoading ? <div>Loading...</div>

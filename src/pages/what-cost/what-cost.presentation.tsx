@@ -22,7 +22,7 @@ export const WhatCostPresentation: React.StatelessComponent<
   onBack, onComplete, onSelectedCostRange,
 }) => {
   return (
-    <div className={ 'o-main-container c-what-cost transition-item' }>
+    <div className={ 'o-main-container c-what-cost' }>
       <h2 className='o-spacing-bottom-xxlarge'>
         What cost?
       </h2>

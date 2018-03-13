@@ -7,6 +7,8 @@ import thunk from 'redux-thunk';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
 import {
   ConnectedRouter,
   routerMiddleware,
@@ -91,13 +93,22 @@ extends Component<Props<{}>, SharedAppStateInterface> {
         <div>
           <ConnectedRouter history={ history }>
             <Route render={ ({ location }) => (
-              <Switch location={ location }>
-                <Route exact path={ `/${URLS.LANDING.url}` }
-                  component={ LandingComponent } />
-                <Route path={ `/${URLS.APP.url}` } component={
-                  SharedAppWithNavigatorComponent
-                  } />
-              </Switch>
+              <TransitionGroup className='c-shared-app__main'>
+                <CSSTransition
+                  key={ location.pathname }
+                  timeout={ { enter: 300, exit: 0 } }
+                  classNames='u-fade' appear>
+                  <section className='c-shared-app__inner'>
+                    <Switch location={ location }>
+                      <Route exact path={ `/${URLS.LANDING.url}` }
+                        component={ LandingComponent } />
+                      <Route path={ `/${URLS.APP.url}` } component={
+                        SharedAppWithNavigatorComponent
+                        } />
+                    </Switch>
+                  </section>
+                </CSSTransition>
+              </TransitionGroup>
             ) } />
           </ConnectedRouter>
         </div>
