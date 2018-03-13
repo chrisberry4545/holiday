@@ -44,6 +44,7 @@ export function resultsReducer(
         ...state,
         hasNextHoliday: true,
         hasPreviousHoliday: false,
+        holidayIndex: -1,
         holidayResults: apiResults.holidayResults,
         isLoading: false,
       };
