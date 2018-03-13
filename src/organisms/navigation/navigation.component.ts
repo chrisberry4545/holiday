@@ -10,6 +10,7 @@ import {
   NavUrlInterface,
   PAGE_ORDER,
   StateInterface,
+  URLS,
 } from './../../models';
 
 import {
@@ -38,7 +39,11 @@ const mapDispatchToProps = (
 ): NavigationDispatchProps => {
   return {
     onGoToPage: (url: NavUrlInterface) => {
-      dispatch(push(url.url));
+      return url.url === URLS.LANDING.url
+        ?
+        dispatch(push(URLS.LANDING.url))
+        :
+        dispatch(push(`/${URLS.APP.url}/${url.url}`));
     },
   };
 };
