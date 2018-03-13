@@ -19,16 +19,15 @@ export function setHolidayResults(
   };
 }
 
-export const GO_TO_NEXT_HOLIDAY_RESULT = 'GO_TO_NEXT_HOLIDAY_RESULT';
-export function goToNextHolidayResult(): Action {
-  return {
-    type: GO_TO_NEXT_HOLIDAY_RESULT,
-  };
+export interface GoToHolidayResultAction extends Action {
+  holidayIndex: number;
 }
-
-export const GO_TO_PREVIOUS_HOLIDAY_RESULT = 'GO_TO_PREVIOUS_HOLIDAY_RESULT';
-export function goToPreviousHolidayResult(): Action {
+export const GO_TO_HOLIDAY_RESULT = 'GO_TO_HOLIDAY_RESULT';
+export function goToHolidayResult(
+  holidayIndex: number,
+): GoToHolidayResultAction {
   return {
-    type: GO_TO_PREVIOUS_HOLIDAY_RESULT,
+    holidayIndex,
+    type: GO_TO_HOLIDAY_RESULT,
   };
 }

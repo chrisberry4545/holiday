@@ -3,9 +3,9 @@ import {
 } from '@chrisb-dev/holiday-shared-models';
 
 export interface ResultsStateInterface {
-  currentHoliday: HolidayInterface;
   hasNextHoliday: boolean;
   hasPreviousHoliday: boolean;
+  holidayIndex: number;
   holidayResults: HolidayInterface[];
   isLoading: boolean;
 }

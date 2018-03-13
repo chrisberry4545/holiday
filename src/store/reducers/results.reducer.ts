@@ -1,8 +1,8 @@
 import { Action } from './../actions';
 
 import {
-  GO_TO_NEXT_HOLIDAY_RESULT,
-  GO_TO_PREVIOUS_HOLIDAY_RESULT,
+  GO_TO_HOLIDAY_RESULT,
+  GoToHolidayResultAction,
   SET_HOLIDAY_RESULTS,
   SetHolidayResultsAction,
 } from './../';
@@ -17,9 +17,9 @@ import {
 
 const getDefaultState = (): ResultsStateInterface => {
   return {
-    currentHoliday: null,
     hasNextHoliday: false,
     hasPreviousHoliday: false,
+    holidayIndex: -1,
     holidayResults: [],
     isLoading: false,
   };
@@ -42,31 +42,18 @@ export function resultsReducer(
       const apiResults = (action as SetHolidayResultsAction);
       return {
         ...state,
-        currentHoliday: apiResults.holidayResults[0],
         hasNextHoliday: true,
         hasPreviousHoliday: false,
         holidayResults: apiResults.holidayResults,
         isLoading: false,
       };
-    case GO_TO_NEXT_HOLIDAY_RESULT:
-      const nextHolidayIndex = getCurrentHolidayIndex(
-        state.currentHoliday, state.holidayResults,
-      ) + 1;
+    case GO_TO_HOLIDAY_RESULT:
+      const { holidayIndex } = action as GoToHolidayResultAction;
       return {
         ...state,
-        currentHoliday: state.holidayResults[nextHolidayIndex],
-        hasNextHoliday: nextHolidayIndex < state.holidayResults.length - 1,
-        hasPreviousHoliday: true,
-      };
-    case GO_TO_PREVIOUS_HOLIDAY_RESULT:
-      const previousHolidayIndex = getCurrentHolidayIndex(
-        state.currentHoliday, state.holidayResults,
-      ) - 1;
-      return {
-        ...state,
-        currentHoliday: state.holidayResults[previousHolidayIndex],
-        hasNextHoliday: true,
-        hasPreviousHoliday: previousHolidayIndex > 0,
+        hasNextHoliday: holidayIndex < state.holidayResults.length - 1,
+        hasPreviousHoliday: holidayIndex > 0,
+        holidayIndex,
       };
     default:
       return state;
