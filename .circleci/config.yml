@@ -70,10 +70,22 @@ workflows:
       - lint:
           requires:
             - build
+          filters:
+            branches:
+              only:gti
+                - master
       - bundle:
           requires:
             - build
+          filters:
+            branches:
+              only:
+                - master
       - deploy:
+          filters:
+            branches:
+              only:
+                - master
           requires:
             - lint
             - bundle
