@@ -22,7 +22,7 @@ export const WhatTemperaturePresentation: React.StatelessComponent<
   onBack, onComplete, onSelectTemperature,
 }) => {
   return (
-    <div className={ 'o-main-container c-what-temperature transition-item' }>
+    <div className={ 'o-main-container c-what-temperature' }>
       <h2 className='o-spacing-bottom-xxlarge'>
         What temperature?
       </h2>

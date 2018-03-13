@@ -1,11 +1,19 @@
-.transition-wrapper {
-  position: relative;
-  z-index: 1;
+.u-fade-appear,
+.u-fade-enter {
+  opacity: 0;
+}
 
-  .transition-item {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-  }
+.u-fade-appear-active,
+.u-fade-enter-active {
+  transition: opacity .3s linear;
+  opacity: 1;
+}
+
+.u-fade-exit {
+  transition: opacity .2s linear;
+  opacity: 1;
+}
+
+.u-fade-exit-active {
+  opacity: 0;
 }

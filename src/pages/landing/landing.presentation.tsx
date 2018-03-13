@@ -13,7 +13,7 @@ interface LandingCombinedProps
 export const LandingPresentation: React.SFC<LandingCombinedProps> =
 ({ onStartJourney }) => {
   return (
-    <div className='c-landing transition-item'>
+    <div className='c-landing'>
       <div className='c-landing__content'>
         <button
           className={ 'o-spacing-bottom-xxlarge ' +
