@@ -27,7 +27,7 @@ ThunkAction<Action, StateInterface, void>
     dispatch(goToHolidayResult(previousHolidayIndex));
     return dispatch(push(
       `/${URLS.APP.url}/${URLS.RESULTS.url}` +
-      `/${previousHolidayIndex}`,
+      `/${previousHolidayIndex + 1}`,
     ));
   };
 };
@@ -42,7 +42,7 @@ ThunkAction<Action, StateInterface, void>
     dispatch(goToHolidayResult(nextHolidayIndex));
     return dispatch(push(
       `/${URLS.APP.url}/${URLS.RESULTS.url}` +
-      `/${nextHolidayIndex}`,
+      `/${nextHolidayIndex + 1}`,
     ));
   };
 };

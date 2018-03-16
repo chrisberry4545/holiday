@@ -27,9 +27,6 @@ const mapStateToProps = (
 ): ResultsStateProps => {
   return {
     ...state.main.results,
-    currentHoliday: state.main.results.holidayResults[
-      state.main.results.holidayIndex
-    ],
   };
 };
 

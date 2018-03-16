@@ -12,7 +12,7 @@ import {
 } from './';
 
 import {
-  HolidayResultPresentation,
+  HolidayResultsComponent,
 } from './../../organisms';
 
 interface ResultsCombinedProps
@@ -20,7 +20,7 @@ interface ResultsCombinedProps
 
 export const ResultsPresentation: React.SFC<ResultsCombinedProps> =
 ({
-  isLoading, currentHoliday, hasPreviousHoliday, hasNextHoliday, match,
+  isLoading, hasPreviousHoliday, hasNextHoliday, match,
   onPreviousHoliday, onNextHoliday,
 }) => {
   return (
@@ -29,13 +29,10 @@ export const ResultsPresentation: React.SFC<ResultsCombinedProps> =
       {
         isLoading ? <div>Loading...</div>
         :
-        !currentHoliday ? <div>No results found...</div>
-        :
         <Switch>
-          <Route path={ `${match.url}/:number` } exact
-            render={() => (
-              <HolidayResultPresentation holidayResult={ currentHoliday } />
-            )} />
+          <Route path={ `${match.url}/:id` } exact>
+            <HolidayResultsComponent />
+          </Route>
         </Switch>
       }
       <div className='o-spacing-top-xlarge'>
