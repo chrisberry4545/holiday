@@ -18,13 +18,15 @@ import {
   HolidayResultStateProps,
 } from './';
 
+import {
+  getCurrentHolidayForState,
+} from './../../helpers';
+
 const mapStateToProps = (
   state: StateInterface,
 ): HolidayResultStateProps => {
   return {
-    holidayResult: state.main.results.holidayResults[
-      state.main.results.holidayIndex
-    ],
+    holidayResult: getCurrentHolidayForState(state),
   };
 };
 

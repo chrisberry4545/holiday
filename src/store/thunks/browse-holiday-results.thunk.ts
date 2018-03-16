@@ -14,8 +14,11 @@ import {
 
 import {
   Action,
-  goToHolidayResult,
 } from './../../store/actions';
+
+import {
+  getCurrentHolidayIndexForState,
+} from './../../helpers';
 
 export const goToPreviousHolidayResultThunk: ActionCreator<
 ThunkAction<Action, StateInterface, void>
@@ -23,11 +26,13 @@ ThunkAction<Action, StateInterface, void>
   return (
     dispatch: Dispatch<StateInterface>, getState,
   ): Action => {
-    const previousHolidayIndex = getState().main.results.holidayIndex - 1;
-    dispatch(goToHolidayResult(previousHolidayIndex));
+    const state = getState();
+    const currentHolidayIndex = getCurrentHolidayIndexForState(state);
+    const previousHoliday = state.main.results.holidayResults[
+      currentHolidayIndex - 1
+    ];
     return dispatch(push(
-      `/${URLS.APP.url}/${URLS.RESULTS.url}` +
-      `/${previousHolidayIndex + 1}`,
+      `/${URLS.APP.url}/${URLS.RESULTS.url}/${previousHoliday._id}`,
     ));
   };
 };
@@ -38,11 +43,13 @@ ThunkAction<Action, StateInterface, void>
   return (
     dispatch: Dispatch<StateInterface>, getState,
   ): Action => {
-    const nextHolidayIndex = getState().main.results.holidayIndex + 1;
-    dispatch(goToHolidayResult(nextHolidayIndex));
+    const state = getState();
+    const currentHolidayIndex = getCurrentHolidayIndexForState(state);
+    const nextHoliday = state.main.results.holidayResults[
+      currentHolidayIndex + 1
+    ];
     return dispatch(push(
-      `/${URLS.APP.url}/${URLS.RESULTS.url}` +
-      `/${nextHolidayIndex + 1}`,
+      `/${URLS.APP.url}/${URLS.RESULTS.url}/${nextHoliday._id}`,
     ));
   };
 };

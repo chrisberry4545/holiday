@@ -1,8 +1,6 @@
 import { Action } from './../actions';
 
 import {
-  GO_TO_HOLIDAY_RESULT,
-  GoToHolidayResultAction,
   SET_HOLIDAY_RESULTS,
   SetHolidayResultsAction,
 } from './../';
@@ -17,9 +15,6 @@ import {
 
 const getDefaultState = (): ResultsStateInterface => {
   return {
-    hasNextHoliday: false,
-    hasPreviousHoliday: false,
-    holidayIndex: -1,
     holidayResults: [],
     isLoading: false,
   };
@@ -42,19 +37,8 @@ export function resultsReducer(
       const apiResults = (action as SetHolidayResultsAction);
       return {
         ...state,
-        hasNextHoliday: true,
-        hasPreviousHoliday: false,
-        holidayIndex: -1,
         holidayResults: apiResults.holidayResults,
         isLoading: false,
-      };
-    case GO_TO_HOLIDAY_RESULT:
-      const { holidayIndex } = action as GoToHolidayResultAction;
-      return {
-        ...state,
-        hasNextHoliday: holidayIndex < state.holidayResults.length - 1,
-        hasPreviousHoliday: holidayIndex > 0,
-        holidayIndex,
       };
     default:
       return state;

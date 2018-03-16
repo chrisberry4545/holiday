@@ -18,16 +18,3 @@ export function setHolidayResults(
     type: SET_HOLIDAY_RESULTS,
   };
 }
-
-export interface GoToHolidayResultAction extends Action {
-  holidayIndex: number;
-}
-export const GO_TO_HOLIDAY_RESULT = 'GO_TO_HOLIDAY_RESULT';
-export function goToHolidayResult(
-  holidayIndex: number,
-): GoToHolidayResultAction {
-  return {
-    holidayIndex,
-    type: GO_TO_HOLIDAY_RESULT,
-  };
-}
