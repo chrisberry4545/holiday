@@ -9,6 +9,7 @@ import {
 
 import {
   Action,
+  goToNextHolidayResultThunk,
   setHolidayResults,
 } from './../../store/';
 
@@ -27,18 +28,18 @@ import {
 } from './../../services';
 
 export const sendUserInputThunk: ActionCreator<
-ThunkAction<Action, StateInterface, void>
+ThunkAction<Promise<Action>, StateInterface, void>
 > = () => {
   return (
     dispatch: Dispatch<StateInterface>, getState,
-  ): Action => {
+  ): Promise<Action> => {
     const holidayApiService =
       diContainer.get<HolidayApiServiceInterface>(TYPES.HolidayApiService);
-    holidayApiService.getHolidayResults(
+    return holidayApiService.getHolidayResults(
       getState().main.formInput,
     ).then((results) => {
-      return dispatch(setHolidayResults(results));
+      dispatch(setHolidayResults(results));
+      return dispatch(goToNextHolidayResultThunk());
     });
-    return dispatch(push(`${URLS.RESULTS.url}`));
   };
 };

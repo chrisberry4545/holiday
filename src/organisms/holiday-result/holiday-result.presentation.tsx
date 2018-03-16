@@ -11,12 +11,14 @@ import {
   SelectorItemPresentation,
 } from './../../elements';
 
+import { RouteComponentProps } from 'react-router';
+
 interface HolidayResultCombinedProps
   extends HolidayResultStateProps, HolidayResultDispatchProps {}
 
-export const HolidayResultPresentation: React.SFC<HolidayResultCombinedProps>
+export const HolidayResultPresentation: React.SFC<any>
 = ({ holidayResult }) => {
-  return (
+  return holidayResult ? (
     <div>
       <h2>{ holidayResult.name }</h2>
       <ul>
@@ -33,5 +35,5 @@ export const HolidayResultPresentation: React.SFC<HolidayResultCombinedProps>
           </div>
         )) }
     </div>
-  );
+  ) : <div>No holiday found...</div>;
 };

@@ -12,8 +12,8 @@ import {
 
 import {
   Action,
-  goToNextHolidayResult,
-  goToPreviousHolidayResult,
+  goToNextHolidayResultThunk,
+  goToPreviousHolidayResultThunk,
 } from './../../store';
 
 import {
@@ -22,10 +22,20 @@ import {
   ResultsStateProps,
 } from './';
 
+import {
+  getCurrentHolidayIndexForState,
+} from './../../helpers';
+
 const mapStateToProps = (
   state: StateInterface,
 ): ResultsStateProps => {
-  return state.main.results;
+  const currentHolidayIndex = getCurrentHolidayIndexForState(state);
+  return {
+    ...state.main.results,
+    hasNextHoliday:
+      currentHolidayIndex < state.main.results.holidayResults.length - 1,
+    hasPreviousHoliday: currentHolidayIndex > 0,
+  };
 };
 
 const mapDispatchToProps = (
@@ -33,10 +43,10 @@ const mapDispatchToProps = (
 ): ResultsDispatchProps => {
   return {
     onNextHoliday: () => {
-      dispatch(goToNextHolidayResult());
+      dispatch(goToNextHolidayResultThunk() as any);
     },
     onPreviousHoliday: () => {
-      dispatch(goToPreviousHolidayResult());
+      dispatch(goToPreviousHolidayResultThunk() as any);
     },
   };
 };

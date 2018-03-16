@@ -9,3 +9,7 @@ export {
 export {
   HolidayResultPresentation,
 } from './holiday-result.presentation';
+
+export {
+  HolidayResultsComponent,
+} from './holiday-results.component';

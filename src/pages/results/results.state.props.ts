@@ -2,4 +2,7 @@ import {
   ResultsStateInterface,
 } from './../../models/';
 
-export interface ResultsStateProps extends ResultsStateInterface {}
+export interface ResultsStateProps extends ResultsStateInterface {
+  hasNextHoliday: boolean;
+  hasPreviousHoliday: boolean;
+}

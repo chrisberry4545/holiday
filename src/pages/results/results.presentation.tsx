@@ -2,21 +2,25 @@ import * as React from 'react';
 
 import './results.scss';
 
+import { Route, Switch } from 'react-router-dom';
+
+import { RouteComponentProps } from 'react-router';
+
 import {
   ResultsDispatchProps,
   ResultsStateProps,
 } from './';
 
 import {
-  HolidayResultPresentation,
+  HolidayResultsComponent,
 } from './../../organisms';
 
 interface ResultsCombinedProps
-  extends ResultsStateProps, ResultsDispatchProps {}
+  extends ResultsStateProps, ResultsDispatchProps, RouteComponentProps<any> {}
 
 export const ResultsPresentation: React.SFC<ResultsCombinedProps> =
 ({
-  isLoading, currentHoliday, hasPreviousHoliday, hasNextHoliday,
+  isLoading, hasPreviousHoliday, hasNextHoliday, match,
   onPreviousHoliday, onNextHoliday,
 }) => {
   return (
@@ -25,10 +29,11 @@ export const ResultsPresentation: React.SFC<ResultsCombinedProps> =
       {
         isLoading ? <div>Loading...</div>
         :
-        !currentHoliday ? <div>No results found...</div>
-        :
-        <HolidayResultPresentation
-          holidayResult={ currentHoliday } />
+        <Switch>
+          <Route path={ `${match.url}/:id` } exact>
+            <HolidayResultsComponent />
+          </Route>
+        </Switch>
       }
       <div className='o-spacing-top-xlarge'>
         {
