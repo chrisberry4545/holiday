@@ -85,6 +85,17 @@ extends Component<Props<{}>, SharedAppStateInterface> {
       } as StateInterface);
       this.setState({ store });
     });
+
+    [
+      './assets/backgrounds/beach.jpg',
+      './assets/backgrounds/boat-house-cottage.jpg',
+      './assets/backgrounds/city.jpg',
+      './assets/backgrounds/food.jpg',
+      './assets/backgrounds/mountains.jpg',
+      './assets/backgrounds/rainforest.jpg',
+    ].forEach((imageUrl) => {
+      new Image().src = imageUrl;
+    });
   }
 
   public render() {
