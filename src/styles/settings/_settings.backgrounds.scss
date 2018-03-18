@@ -1,0 +1,51 @@
+$landing-background: url(
+  '/assets/backgrounds/rainforest.jpg'
+) !default;
+$landing-background-overlay: linear-gradient(
+  4deg,
+  rgba(255, 154, 104, 0.7),
+  rgba(255, 154, 104, 0.7),
+  rgba(200, 177, 252, 0.5)
+) !default;
+
+$flight-times-background: url(
+  '/assets/backgrounds/city.jpg'
+) !default;
+$flight-times-background-overlay: linear-gradient(
+  4deg,
+  transparentize(#c1dfc4, 0.3),
+  transparentize(#deecdd, 0.3)
+) !default;
+
+$what-activities-background: url(
+  '/assets/backgrounds/boat-house-cottage.jpg'
+) !default;
+$what-activities-background-overlay: linear-gradient(
+  4deg,
+  rgba(245, 223, 115, 0.639216),
+  rgba(255, 159, 58, 0.62)
+) !default;
+
+$what-cost-background: url(
+  '/assets/backgrounds/beach.jpg'
+) !default;
+$what-cost-background-overlay: linear-gradient(
+  4deg,
+  rgba(255, 154, 104, 0.7),
+  rgba(255, 154, 104, 0.7),
+  rgba(200, 177, 252, 0.5)
+) !default;
+
+$what-food-background: url(
+  '/assets/backgrounds/food.jpg'
+) !default;
+$what-food-background-overlay: linear-gradient(
+  4deg,
+  transparentize(#c79081, 0.3),
+  transparentize(#dfa579, 0.3)
+) !default;
+
+$what-temperature-background: url(
+  '/assets/backgrounds/mountains.jpg'
+) !default;
+$what-temperature-background-overlay: rgba(255,255,255,0.4) !default;

@@ -1,2 +1,9 @@
 @import './../../styles/partner/<!--partnerName--settings-->';
 @import './../../styles/_tools';
+
+.c-what-temperature {
+  @include background-with-overlay(
+    $what-temperature-background,
+    $what-temperature-background-overlay
+  );
+}

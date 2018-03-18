@@ -2,14 +2,15 @@
 @import './../../styles/_tools';
 
 .c-landing {
-  min-height: 100vh;
   text-align: center;
-  background-image: $landing-background-color;
   overflow: auto;
   box-sizing: border-box;
   padding: 20px;
-  height: 100vh;
   padding-top: 37vh;
+  @include background-with-overlay(
+    $landing-background,
+    $landing-background-overlay
+  );
 }
 
   .c-landing__content {

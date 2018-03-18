@@ -1,0 +1,21 @@
+@mixin background-with-overlay(
+  $mainBackground,
+  $overlayBackground
+) {
+  min-height: 100vh;
+  background: $mainBackground;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+
+  &:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $overlayBackground;
+  }
+}
