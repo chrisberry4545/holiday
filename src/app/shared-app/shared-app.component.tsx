@@ -75,9 +75,20 @@ extends Component<Props<{}>, SharedAppStateInterface> {
   }
 
   public componentDidMount() {
+    const loadBackgroundImagePromise = new Promise((resolve, reject) => {
+      const backgroundImage = new Image();
+      backgroundImage.src = './assets/backgrounds/rainforest.jpg';
+      backgroundImage.onload = () => {
+        resolve();
+      };
+    });
+
     const holidayApiService =
       diContainer.get<HolidayApiServiceInterface>(TYPES.HolidayApiService);
-    holidayApiService.getUserInputFormData().then((formOptions) => {
+    Promise.all([
+      loadBackgroundImagePromise,
+      holidayApiService.getUserInputFormData(),
+    ]).then(([image, formOptions]) => {
       const store = initStore({
         main: {
           formOptions,
@@ -92,7 +103,6 @@ extends Component<Props<{}>, SharedAppStateInterface> {
       './assets/backgrounds/city.jpg',
       './assets/backgrounds/food.jpg',
       './assets/backgrounds/mountains.jpg',
-      './assets/backgrounds/rainforest.jpg',
     ].forEach((imageUrl) => {
       new Image().src = imageUrl;
     });
