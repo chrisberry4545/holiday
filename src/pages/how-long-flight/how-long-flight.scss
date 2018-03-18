@@ -1,2 +1,9 @@
 @import './../../styles/partner/<!--partnerName--settings-->';
 @import './../../styles/_tools';
+
+.c-how-long-flight {
+  @include background-with-overlay(
+    $flight-times-background,
+    $flight-times-background-overlay
+  );
+}

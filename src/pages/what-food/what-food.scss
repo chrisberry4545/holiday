@@ -1,2 +1,9 @@
 @import './../../styles/partner/<!--partnerName--settings-->';
 @import './../../styles/_tools';
+
+.c-what-food {
+  @include background-with-overlay(
+    $what-food-background,
+    $what-food-background-overlay
+  );
+}

@@ -1,2 +1,9 @@
 @import './../../styles/partner/<!--partnerName--settings-->';
 @import './../../styles/_tools';
+
+.c-what-cost {
+  @include background-with-overlay(
+    $what-cost-background,
+    $what-cost-background-overlay
+  );
+}
