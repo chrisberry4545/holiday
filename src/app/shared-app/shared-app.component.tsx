@@ -77,7 +77,7 @@ extends Component<Props<{}>, SharedAppStateInterface> {
   public componentDidMount() {
     const loadBackgroundImagePromise = new Promise((resolve, reject) => {
       const backgroundImage = new Image();
-      backgroundImage.src = './assets/backgrounds/rainforest.jpg';
+      backgroundImage.src = '/assets/backgrounds/rainforest.jpg';
       backgroundImage.onload = () => {
         resolve();
       };
@@ -98,11 +98,11 @@ extends Component<Props<{}>, SharedAppStateInterface> {
     });
 
     [
-      './assets/backgrounds/beach.jpg',
-      './assets/backgrounds/boat-house-cottage.jpg',
-      './assets/backgrounds/city.jpg',
-      './assets/backgrounds/food.jpg',
-      './assets/backgrounds/mountains.jpg',
+      '/assets/backgrounds/beach.jpg',
+      '/assets/backgrounds/boat-house-cottage.jpg',
+      '/assets/backgrounds/city.jpg',
+      '/assets/backgrounds/food.jpg',
+      '/assets/backgrounds/mountains.jpg',
     ].forEach((imageUrl) => {
       new Image().src = imageUrl;
     });
