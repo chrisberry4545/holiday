@@ -1,4 +1,5 @@
 export interface NavUrlInterface {
-  navName: string;
+  hideInNav?: boolean;
+  navName?: string;
   url: string;
 }

@@ -33,17 +33,17 @@ export const SharedAppWithNavigatorComponent = ({ location, match }) => {
           key={ location.pathname } timeout={ 300 } classNames='u-fade' appear>
           <section className='c-shared-app-with-navigator__inner'>
             <Switch location={ location }>
-              <Route path={ `${match.url}/${URLS.HOW_LONG_FLIGHT.url}` }
+              <Route path={ `${URLS.HOW_LONG_FLIGHT.url}` }
                 component={ HowLongFlightComponent } />
-              <Route path={ `${match.url}/${URLS.WHAT_FOOD.url}` }
+              <Route path={ `${URLS.WHAT_FOOD.url}` }
                 component={ WhatFoodComponent } />
-              <Route path={ `${match.url}/${URLS.WHAT_ACTIVITIES.url}` }
+              <Route path={ `${URLS.WHAT_ACTIVITIES.url}` }
                 component={ WhatActivitiesComponent } />
-              <Route path={ `${match.url}/${URLS.WHAT_COST.url}` }
+              <Route path={ `${URLS.WHAT_COST.url}` }
                 component={ WhatCostComponent } />
-              <Route path={ `${match.url}/${URLS.WHAT_TEMPERATURE.url}` }
+              <Route path={ `${URLS.WHAT_TEMPERATURE.url}` }
                 component={ WhatTemperatureComponent } />
-              <Route path={ `${match.url}/${URLS.RESULTS.url}` }
+              <Route path={ `${URLS.RESULTS.url}` }
                 component={ ResultsComponent } />
             </Switch>
           </section>

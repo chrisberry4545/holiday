@@ -11,30 +11,30 @@ export const URLS: { [key: string]: NavUrlInterface } = {
   },
   HOW_LONG_FLIGHT: {
     navName: 'Flights',
-    url: `flight-times`,
+    url: `/${appUrl}/flight-times`,
   },
   LANDING: {
     navName: 'Home',
     url: '',
   },
   RESULTS: {
-    navName: undefined,
-    url: `results`,
+    hideInNav: true,
+    url: `/${appUrl}/results`,
   },
   WHAT_ACTIVITIES: {
     navName: 'Activities',
-    url: `what-activities`,
+    url: `/${appUrl}/what-activities`,
   },
   WHAT_COST: {
     navName: 'Cost',
-    url: `what-cost`,
+    url: `/${appUrl}/what-cost`,
   },
   WHAT_FOOD: {
     navName: 'Food',
-    url: `what-food`,
+    url: `/${appUrl}/what-food`,
   },
   WHAT_TEMPERATURE: {
     navName: 'Weather',
-    url: `what-temperature`,
+    url: `/${appUrl}/what-temperature`,
   },
 };

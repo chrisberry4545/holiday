@@ -36,7 +36,7 @@ const mapDispatchToProps = (
 ): LandingDispatchProps => {
   return {
     onStartJourney: () => {
-      dispatch(push(`${URLS.APP.url}/${PAGE_ORDER[1].url}`));
+      dispatch(push(`${PAGE_ORDER[1].url}`));
     },
   };
 };
