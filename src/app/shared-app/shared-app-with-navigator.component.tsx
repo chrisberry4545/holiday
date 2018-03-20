@@ -28,10 +28,10 @@ export const SharedAppWithNavigatorComponent = ({ location, match }) => {
   return (
     <div className='c-shared-app-with-navigator'>
       <NavigationComponent />
-      <TransitionGroup className='c-shared-app-with-navigator__main'>
+      <TransitionGroup className='u-position-relative'>
         <CSSTransition
           key={ location.pathname } timeout={ 300 } classNames='u-fade' appear>
-          <section className='c-shared-app-with-navigator__inner'>
+          <section className='o-fill-parent'>
             <Switch location={ location }>
               <Route path={ `${URLS.HOW_LONG_FLIGHT.url}` }
                 component={ HowLongFlightComponent } />

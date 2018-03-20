@@ -8,17 +8,13 @@
 }
 
 .c-holiday-result__first-image {
+  display: flex;
+  justify-content: center;
+  text-align: center;
   @include background-with-overlay(
     rgba(0, 0, 0, 0),
     $results-main-image-background
   );
-}
-
-.c-holiday-result__header {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .c-holiday-result__highlight {
@@ -72,12 +68,8 @@
     }
 
     &:before {
-      position: absolute;
       content: '';
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
+      @include fill-parent();
       background: linear-gradient(
         $result-highlight-card-start-gradient,
         $result-highlight-card-middle-gradient,
@@ -107,6 +99,10 @@
 }
 
 .c-holiday-result__none-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
   @include background-with-overlay(
     $results-main-image-background,
     $results-main-image-background
@@ -114,8 +110,5 @@
 }
 
   .c-holiday-result__none-found__text {
-    position: absolute;
-    top: calc(50% - #{$header-height / 2});
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-$header-height / 2);
   }

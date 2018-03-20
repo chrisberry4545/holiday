@@ -114,12 +114,12 @@ extends Component<Props<{}>, SharedAppStateInterface> {
         <div>
           <ConnectedRouter history={ history }>
             <Route render={ ({ location }) => (
-              <TransitionGroup className='c-shared-app__main'>
+              <TransitionGroup className='u-position-relative'>
                 <CSSTransition
                   key={ location.pathname }
                   timeout={ { enter: 300, exit: 0 } }
                   classNames='u-fade' appear>
-                  <section className='c-shared-app__inner'>
+                  <section className='o-fill-parent'>
                     <Switch location={ location }>
                       <Route exact path={ `/${URLS.LANDING.url}` }
                         component={ LandingComponent } />
