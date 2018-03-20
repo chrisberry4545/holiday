@@ -18,7 +18,7 @@ import { RouteComponentProps } from 'react-router';
 interface HolidayResultCombinedProps
   extends HolidayResultStateProps, HolidayResultDispatchProps {}
 
-export const HolidayResultPresentation: React.SFC<any>
+export const HolidayResultPresentation: React.SFC<HolidayResultCombinedProps>
 = ({ holidayResult }) => {
   return holidayResult ? (
     <div>

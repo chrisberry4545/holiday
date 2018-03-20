@@ -19,6 +19,7 @@ import { Provider, Store } from 'react-redux';
 
 import {
   LandingComponent,
+  LoadingPresentation,
 } from './../../pages';
 
 import {
@@ -135,7 +136,7 @@ extends Component<Props<{}>, SharedAppStateInterface> {
         </div>
       </Provider>
     ) : (
-      <div>Loading data..</div>
+      <LoadingPresentation />
     );
   }
 }
