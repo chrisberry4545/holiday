@@ -52,7 +52,8 @@ export const HolidayResultPresentation: React.SFC<any>
       {
         holidayResult.country.facts && holidayResult.country.facts.length > 0
         && (
-        <div className='o-main-container'>
+        <div className={'o-main-container c-holiday-result__card ' +
+          'c-holiday-result__facts'}>
           <h2>Facts</h2>
           <ul>
             { holidayResult.country.facts.map((fact) => (
@@ -63,5 +64,10 @@ export const HolidayResultPresentation: React.SFC<any>
       }
 
     </div>
-  ) : <div className='c-holiday-result__none-found'>No holiday found...</div>;
+  ) :
+  <div className='c-holiday-result__none-found'>
+    <h2 className='c-holiday-result__none-found__text'>
+      No holiday found...
+    </h2>
+  </div>;
 };

@@ -50,4 +50,5 @@ $what-temperature-background: url(
 ) !default;
 $what-temperature-background-overlay: rgba(193, 100, 124, 0.66) !default;
 
-$results-background: $landing-background-overlay !default;
+$results-background: #000000;
+$results-main-image-background: $landing-background-overlay !default;

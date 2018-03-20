@@ -2,8 +2,5 @@
 @import './../../styles/_tools';
 
 .c-results {
-  @include background-with-overlay(
-    $results-background,
-    $results-background
-  );
+  background: $results-background;
 }

@@ -4,7 +4,7 @@
 .c-holiday-result__first-image {
   @include background-with-overlay(
     rgba(0, 0, 0, 0),
-    $results-background
+    $results-main-image-background
   );
 }
 
@@ -22,7 +22,7 @@
 
 .c-holiday-result__card {
   width: 100%;
-  min-height: 350px;
+  min-height: 500px;
   position: relative;
   background-size: cover;
   background-position: center;
@@ -53,6 +53,10 @@
     height: 100%;
     text-align: right;
     flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
     &:before {
       position: absolute;
       content: '';
@@ -74,9 +78,22 @@
     position: relative;
   }
 
-.c-holiday-result__none-found {
-  position: absolute;
-  top: calc(50% - #{$header-height / 2});
-  left: 50%;
-  transform: translate(-50%, -50%);
+.c-holiday-result__facts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
+.c-holiday-result__none-found {
+  @include background-with-overlay(
+    $results-main-image-background,
+    $results-main-image-background
+  );
+}
+
+  .c-holiday-result__none-found__text {
+    position: absolute;
+    top: calc(50% - #{$header-height / 2});
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
