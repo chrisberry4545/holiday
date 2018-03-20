@@ -1,6 +1,12 @@
 @import './../../styles/partner/<!--partnerName--settings-->';
 @import './../../styles/_tools';
 
+@mixin applyToLargerThanMobile() {
+  @media screen and (min-width: 700px) {
+    @content;
+  }
+}
+
 .c-holiday-result__first-image {
   @include background-with-overlay(
     rgba(0, 0, 0, 0),
@@ -21,7 +27,6 @@
 }
 
 .c-holiday-result__card {
-  width: 100%;
   min-height: 500px;
   position: relative;
   background-size: cover;
@@ -31,31 +36,40 @@
 
   &:nth-child(even) {
     .c-holiday-result__highlight__content {
-      padding-left: 0;
-      padding-right: 50%;
       text-align: left;
+      @include applyToLargerThanMobile() {
+        padding-left: 0;
+        padding-right: 50%;
+      }
 
       &:before {
-        background: linear-gradient(
-          90deg,
-          $result-highlight-card-end-gradient,
-          $result-highlight-card-middle-gradient,
-          $result-highlight-card-start-gradient
-        );
+        @include applyToLargerThanMobile() {
+          background: linear-gradient(
+            90deg,
+            $result-highlight-card-end-gradient,
+            $result-highlight-card-middle-gradient,
+            $result-highlight-card-start-gradient
+          );
+        }
       }
     }
   }
 }
 
   .c-holiday-result__highlight__content {
+    padding-top: 50%;
     position: relative;
-    padding-left: 50%;
     height: 100%;
-    text-align: right;
     flex: 1;
     display: flex;
     justify-content: center;
     flex-direction: column;
+
+    @include applyToLargerThanMobile() {
+      text-align: right;
+      padding-left: 50%;
+      padding-top: 0;
+    }
 
     &:before {
       position: absolute;
@@ -65,11 +79,19 @@
       top: 0;
       left: 0;
       background: linear-gradient(
-        90deg,
         $result-highlight-card-start-gradient,
         $result-highlight-card-middle-gradient,
         $result-highlight-card-end-gradient
       );
+
+      @include applyToLargerThanMobile() {
+        background: linear-gradient(
+          90deg,
+          $result-highlight-card-start-gradient,
+          $result-highlight-card-middle-gradient,
+          $result-highlight-card-end-gradient
+        );
+      }
     }
   }
 

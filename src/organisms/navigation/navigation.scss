@@ -2,11 +2,12 @@
 @import './../../styles/_tools';
 
 .c-navigation {
-  width: 100%;
   padding: $default-spacing-unit * 4;
   z-index: 1;
   position: relative;
   border-bottom: 2px solid $nav-link-color;
+  white-space: nowrap;
+  overflow-x: scroll;
 }
 
   .c-navigation__link {
@@ -23,4 +24,8 @@
     .c-navigation__link--selected {
       color: $nav-link-color-selected;
       cursor: default;
+
+      ~.c-navigation__link {
+        display: none;
+      }
     }
