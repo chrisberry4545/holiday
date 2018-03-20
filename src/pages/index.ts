@@ -7,6 +7,10 @@ export {
 } from './landing';
 
 export {
+  LoadingPresentation,
+} from './loading/loading.presentation';
+
+export {
   ResultsComponent,
 } from './results/results.component';
 

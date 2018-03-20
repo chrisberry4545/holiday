@@ -8,6 +8,11 @@ $landing-background-overlay: linear-gradient(
   rgba(200, 177, 252, 0.5)
 ) !default;
 
+$loading-background: url(
+  '/assets/backgrounds/rainforest-min.jpg'
+) !default;
+$loading-background-overlay: $landing-background-overlay !default;
+
 $flight-times-background: url(
   '/assets/backgrounds/city.jpg'
 ) !default;
