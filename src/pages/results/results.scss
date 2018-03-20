@@ -1,2 +1,9 @@
 @import './../../styles/partner/<!--partnerName--settings-->';
 @import './../../styles/_tools';
+
+.c-results {
+  @include background-with-overlay(
+    $results-background,
+    $results-background
+  );
+}

@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import * as renderHTML from 'react-render-html';
+
 import './holiday-result.scss';
 
 import {
@@ -20,20 +22,46 @@ export const HolidayResultPresentation: React.SFC<any>
 = ({ holidayResult }) => {
   return holidayResult ? (
     <div>
-      <h2>{ holidayResult.name }</h2>
-      <ul>
-        { holidayResult.country.facts.map((fact) => (
-          <li key={ fact._id }>{ fact.name }</li>
-        )) }
-      </ul>
+      <div className='c-holiday-result__card c-holiday-result__first-image'
+        style={ { backgroundImage: `url(${holidayResult.mainImageUrl})` } }>
+        <h1 className='c-holiday-result__header'>
+          { holidayResult.name }
+        </h1>
+      </div>
+      <div className='c-holiday-result__highlight'>
         { holidayResult.highlights.map((highlight) => (
-          <div key={ highlight._id }>
-            <h4>{ highlight.title }</h4>
-            <img src={ highlight.imageUrl }
-              className='c-holiday-result__image' />
-            <p>{ highlight.description }</p>
-          </div>
+            <div className='c-holiday-result__card' key={ highlight._id }
+              style={ { backgroundImage: `url(${highlight.imageUrl})` } } >
+              <div className='c-holiday-result__highlight__content'>
+                <div className='c-holiday-result__highlight__inner'>
+                  <h2 className='o-spacing-top-xxlarge o-spacing-bottom-xlarge'>
+                    { highlight.title }
+                  </h2>
+                  <p>
+                    {
+                      highlight.description &&
+                      renderHTML(highlight.description)
+                    }
+                  </p>
+                </div>
+              </div>
+            </div>
         )) }
+      </div>
+
+      {
+        holidayResult.country.facts && holidayResult.country.facts.length > 0
+        && (
+        <div className='o-main-container'>
+          <h2>Facts</h2>
+          <ul>
+            { holidayResult.country.facts.map((fact) => (
+              <li key={ fact._id }>{ fact.name }</li>
+            )) }
+          </ul>
+        </div>)
+      }
+
     </div>
-  ) : <div>No holiday found...</div>;
+  ) : <div className='c-holiday-result__none-found'>No holiday found...</div>;
 };

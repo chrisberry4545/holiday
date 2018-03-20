@@ -22,9 +22,9 @@ export const WhatTemperaturePresentation: React.StatelessComponent<
   onBack, onComplete, onSelectTemperature,
 }) => {
   return (
-    <div className={ 'o-main-container o-main-container--with-header ' +
+    <div className={ 'o-main-container o-allow-for-header ' +
       'c-what-temperature' }>
-      <h2 className='o-spacing-bottom-xxlarge'>
+      <h2 className='o-spacing-bottom-xxlarge o-spacing-top-xxlarge'>
         What temperature?
       </h2>
       <SingleSelectorPresentation
