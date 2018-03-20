@@ -38,13 +38,13 @@ export const WhatActivitiesPresentation: React.StatelessComponent<
       />
       <div className='o-spacing-top-xlarge'>
         <button
-          className='c-btn c-btn--primary'
+          className='c-btn c-btn--primary c-btn--med'
           type='button'
           onClick={ onBack }>
           Back
         </button>
         <button
-          className='c-btn c-btn--primary u-float-right'
+          className='c-btn c-btn--primary c-btn--med u-float-right'
           type='button'
           onClick={ onComplete }>
           Next

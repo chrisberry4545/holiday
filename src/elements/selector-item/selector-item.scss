@@ -2,7 +2,7 @@
 @import './../../styles/_tools';
 
 .c-selector-item {
-  border: 4px solid black;
+  border: 4px solid $selector-color;
   padding: 20px;
   cursor: pointer;
   @include selection-border-hover();

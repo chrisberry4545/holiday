@@ -39,7 +39,7 @@ export const ResultsPresentation: React.SFC<ResultsCombinedProps> =
         {
           hasPreviousHoliday &&
             <button
-            className='c-btn c-btn--primary'
+            className='c-btn c-btn--primary c-btn--med'
             type='button'
             onClick={ onPreviousHoliday }>
             Previous
@@ -48,7 +48,7 @@ export const ResultsPresentation: React.SFC<ResultsCombinedProps> =
         {
           hasNextHoliday &&
           <button
-            className='c-btn c-btn--primary u-float-right'
+            className='c-btn c-btn--primary c-btn--med u-float-right'
             type='button'
             onClick={ onNextHoliday }>
             Next

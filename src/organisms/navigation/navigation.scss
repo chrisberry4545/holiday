@@ -6,6 +6,7 @@
   padding: $default-spacing-unit * 4;
   z-index: 1;
   position: relative;
+  border-bottom: 2px solid $nav-link-color;
 }
 
   .c-navigation__link {
