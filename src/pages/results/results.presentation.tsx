@@ -34,20 +34,21 @@ export const ResultsPresentation: React.SFC<ResultsCombinedProps> =
           </Route>
         </Switch>
       }
-      <div className='o-spacing-top-xlarge'>
+      <div className={'o-spacing-top-xlarge o-main-container ' +
+        'o-space-between-children'}>
         {
-          hasPreviousHoliday &&
+          hasPreviousHoliday ?
             <button
             className='c-btn c-btn--primary c-btn--med'
             type='button'
             onClick={ onPreviousHoliday }>
             Previous
-          </button>
+          </button> : <div></div>
         }
         {
           hasNextHoliday &&
           <button
-            className='c-btn c-btn--primary c-btn--med u-float-right'
+            className='c-btn c-btn--primary c-btn--med'
             type='button'
             onClick={ onNextHoliday }>
             Next

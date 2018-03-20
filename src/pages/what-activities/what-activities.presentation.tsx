@@ -36,7 +36,7 @@ export const WhatActivitiesPresentation: React.StatelessComponent<
         onSelected={ (id) => onSelectActivity(id) }
         onDeselected={ (id) => onDeselectActivity(id) }
       />
-      <div className='o-spacing-top-xlarge'>
+      <div className='o-spacing-top-xlarge o-space-between-children'>
         <button
           className='c-btn c-btn--primary c-btn--med'
           type='button'
@@ -44,7 +44,7 @@ export const WhatActivitiesPresentation: React.StatelessComponent<
           Back
         </button>
         <button
-          className='c-btn c-btn--primary c-btn--med u-float-right'
+          className='c-btn c-btn--primary c-btn--med'
           type='button'
           onClick={ onComplete }>
           Next
