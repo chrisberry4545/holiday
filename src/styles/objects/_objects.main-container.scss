@@ -2,7 +2,7 @@
   padding: $default-spacing-unit * 4;
 }
 
-  .o-main-container--with-header {
-    margin-top: -$header-height;
-    padding-top: $header-height + $default-spacing-unit * 4;
-  }
+.o-allow-for-header {
+  margin-top: -$header-height;
+  padding-top: $header-height;
+}

@@ -30,7 +30,7 @@ const mapStateToProps = (
   return {
     currentUrl,
     isVisible: currentUrl && currentUrl !== `/${PAGE_ORDER[0].url}`,
-    pagesForNav: PAGE_ORDER.filter((page) => page.navName),
+    pagesForNav: PAGE_ORDER.filter((page) => !page.hideInNav),
   };
 };
 
@@ -43,7 +43,7 @@ const mapDispatchToProps = (
         ?
         dispatch(push(URLS.LANDING.url))
         :
-        dispatch(push(`/${URLS.APP.url}/${url.url}`));
+        dispatch(push(`${url.url}`));
     },
   };
 };

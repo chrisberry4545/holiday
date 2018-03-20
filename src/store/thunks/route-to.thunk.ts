@@ -23,7 +23,7 @@ import {
 
 const getPageNumber = (url: string) => {
   return PAGE_ORDER.findIndex((pageUrl) => (
-    `/${URLS.APP.url}/${pageUrl.url}` === url
+    `${pageUrl.url}` === url
   ));
 };
 

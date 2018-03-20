@@ -1,8 +1,15 @@
-$primary-color: #50a1ff !default;
+$primary-color: rgb(36, 116, 235) !default;
 $button-primary-text-color: #FFFFFF !default;
 $selection-color: $primary-color !default;
+$primary-color-hover: lighten($primary-color, 10%) !default;
+$selector-color: #FFFFFF;
 
-$text-color-main: transparentize(rgb(0, 0, 0), 0.3) !default;
-$text-color-titles: #292A31 !default;
+$text-color-main: #FFFFFF !default;
+$text-color-titles: #FFFFFF !default;
 $nav-link-color: $text-color-main !default;
-$nav-link-color-selected: #000000;
+$nav-link-color-selected: darken($nav-link-color, 10%);
+
+$result-first-image-overlay: rgba(0, 0, 0, 0.2) !default;
+$result-highlight-card-start-gradient: rgba(0, 0, 0, 0) !default;
+$result-highlight-card-middle-gradient: rgba(0, 0, 0, 0.7) !default;
+$result-highlight-card-end-gradient: rgba(0, 0, 0, 1) !default;

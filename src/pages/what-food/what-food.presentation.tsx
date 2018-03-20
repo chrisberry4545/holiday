@@ -22,9 +22,9 @@ export const WhatFoodPresentation: React.StatelessComponent<
   onBack, onComplete, onSelectFoodImportance,
 }) => {
   return (
-    <div className={ 'o-main-container o-main-container--with-header ' +
+    <div className={ 'o-main-container o-allow-for-header ' +
       'c-what-food' }>
-      <h2 className='o-spacing-bottom-xxlarge'>
+      <h2 className='o-spacing-bottom-xxlarge o-spacing-top-xxlarge'>
         What food do you like?
       </h2>
       <SingleSelectorPresentation
@@ -35,15 +35,15 @@ export const WhatFoodPresentation: React.StatelessComponent<
         selectedId= { selectedFoodImportanceId }
         onSelected={ (id) => onSelectFoodImportance(id) }
       />
-      <div className='o-spacing-top-xlarge'>
+      <div className='o-spacing-top-xlarge o-space-between-children'>
         <button
-          className='c-btn c-btn--primary'
+          className='c-btn c-btn--primary c-btn--med'
           type='button'
           onClick={ onBack }>
           Back
         </button>
         <button
-          className='c-btn c-btn--primary u-float-right'
+          className='c-btn c-btn--primary c-btn--med'
           type='button'
           onClick={ onComplete }>
           Next

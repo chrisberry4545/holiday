@@ -29,7 +29,7 @@ export const NavigationPresentation: React.SFC<NavigationCombinedProps>
       { pagesForNav.map((urlInfo) => (
         <div onClick={ () => onGoToPage(urlInfo) }
           className={`c-navigation__link ` +
-            `${'/' + urlInfo.url === currentUrl ?
+            `${urlInfo.url === currentUrl ?
                 'c-navigation__link--selected' : ''}`
           }
           key={ urlInfo.url }>

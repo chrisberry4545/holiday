@@ -16,7 +16,7 @@ export const LandingPresentation: React.SFC<LandingCombinedProps> =
     <div className='c-landing'>
       <div className='c-landing__content'>
         <button
-          className={ 'o-spacing-bottom-xxlarge ' +
+          className={ 'o-spacing-bottom-xxlarge o-spacing-top-xxlarge ' +
             'c-landing__start-journey-btn c-btn c-btn--primary' }
           type='button'
           onClick={ onStartJourney }>

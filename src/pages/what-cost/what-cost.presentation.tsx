@@ -22,9 +22,9 @@ export const WhatCostPresentation: React.StatelessComponent<
   onBack, onComplete, onSelectedCostRange,
 }) => {
   return (
-    <div className={ 'o-main-container o-main-container--with-header ' +
+    <div className={ 'o-main-container o-allow-for-header ' +
       'c-what-cost' }>
-      <h2 className='o-spacing-bottom-xxlarge'>
+      <h2 className='o-spacing-bottom-xxlarge o-spacing-top-xxlarge'>
         What cost?
       </h2>
       <SingleSelectorPresentation
@@ -35,15 +35,15 @@ export const WhatCostPresentation: React.StatelessComponent<
         selectedId= { selectedCostRangeId }
         onSelected={ (id) => onSelectedCostRange(id) }
       />
-      <div className='o-spacing-top-xlarge'>
+      <div className='o-spacing-top-xlarge o-space-between-children'>
         <button
-          className='c-btn c-btn--primary'
+          className='c-btn c-btn--primary c-btn--med'
           type='button'
           onClick={ onBack }>
           Back
         </button>
         <button
-          className='c-btn c-btn--primary u-float-right'
+          className='c-btn c-btn--primary c-btn--med'
           type='button'
           onClick={ onComplete }>
           Next
