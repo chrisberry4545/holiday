@@ -11,6 +11,11 @@
   display: flex;
   justify-content: center;
   text-align: center;
+  justify-content: flex-end;
+  padding-bottom: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
   @include background-with-overlay(
     rgba(0, 0, 0, 0),
     $results-main-image-background
@@ -91,12 +96,6 @@
     padding: $default-spacing-unit * 4;
     position: relative;
   }
-
-.c-holiday-result__facts {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
 .c-holiday-result__none-found {
   display: flex;

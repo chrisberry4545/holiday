@@ -27,6 +27,9 @@ export const HolidayResultPresentation: React.SFC<HolidayResultCombinedProps>
         <h1 className='c-holiday-result__header'>
           { holidayResult.name }
         </h1>
+        <p>
+          { renderHTML(holidayResult.description) }
+        </p>
       </div>
       <div className='c-holiday-result__highlight'>
         { holidayResult.highlights.map((highlight) => (
@@ -48,20 +51,6 @@ export const HolidayResultPresentation: React.SFC<HolidayResultCombinedProps>
             </div>
         )) }
       </div>
-
-      {
-        holidayResult.country.facts && holidayResult.country.facts.length > 0
-        && (
-        <div className={'o-main-container c-holiday-result__card ' +
-          'c-holiday-result__facts'}>
-          <h2>Facts</h2>
-          <ul>
-            { holidayResult.country.facts.map((fact) => (
-              <li key={ fact._id }>{ fact.name }</li>
-            )) }
-          </ul>
-        </div>)
-      }
 
     </div>
   ) :
