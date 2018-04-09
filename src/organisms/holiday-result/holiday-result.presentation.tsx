@@ -9,11 +9,11 @@ import {
   HolidayResultStateProps,
 } from './';
 
-import {
-  SelectorItemPresentation,
-} from './../../elements';
-
 import { RouteComponentProps } from 'react-router';
+
+import {
+  GoogleMapPresentation,
+} from './../../molecules';
 
 interface HolidayResultCombinedProps
   extends HolidayResultStateProps, HolidayResultDispatchProps {}
@@ -50,6 +50,10 @@ export const HolidayResultPresentation: React.SFC<HolidayResultCombinedProps>
               </div>
             </div>
         )) }
+      </div>
+
+      <div className='c-holiday-result__map'>
+        <GoogleMapPresentation latLng={ holidayResult.country.latLng } />
       </div>
 
     </div>
