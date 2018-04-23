@@ -28,7 +28,7 @@ export const HolidayResultPresentation: React.SFC<HolidayResultCombinedProps>
           { holidayResult.name }
         </h1>
         <p>
-          { renderHTML(holidayResult.description) }
+          { holidayResult.description && renderHTML(holidayResult.description) }
         </p>
       </div>
       <div className='c-holiday-result__highlight'>
