@@ -12,6 +12,7 @@ import {
 import { RouteComponentProps } from 'react-router';
 
 import {
+  BadgeSectionPresentation,
   GoogleMapPresentation,
 } from './../../molecules';
 
@@ -30,6 +31,10 @@ export const HolidayResultPresentation: React.SFC<HolidayResultCombinedProps>
         <p>
           { holidayResult.description && renderHTML(holidayResult.description) }
         </p>
+        {
+          holidayResult.badges ?
+          <BadgeSectionPresentation badges={ holidayResult.badges }/> : null
+        }
       </div>
       <div className='c-holiday-result__highlight'>
         { holidayResult.highlights.map((highlight) => (

@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@chrisb-dev/holiday-shared-models@1.0.42":
-  version "1.0.42"
-  resolved "https://registry.yarnpkg.com/@chrisb-dev/holiday-shared-models/-/holiday-shared-models-1.0.42.tgz#292b4bdd8988e3c35f1ed40028c6f300098fb734"
+"@chrisb-dev/holiday-shared-models@1.0.45":
+  version "1.0.45"
+  resolved "https://registry.yarnpkg.com/@chrisb-dev/holiday-shared-models/-/holiday-shared-models-1.0.45.tgz#3b5d4bda29092ad2863de398d2d1223235d157b7"
   dependencies:
     typescript "^2.7.1"
 

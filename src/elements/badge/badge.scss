@@ -1,0 +1,17 @@
+.c-badge {
+  margin: 7px;
+}
+
+  .c-badge__inner {
+    $c-badge__inner-size: 40px;
+    width: $c-badge__inner-size;
+    height: $c-badge__inner-size;
+    font-size: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 50%;
+  }
