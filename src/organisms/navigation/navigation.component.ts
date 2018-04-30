@@ -15,6 +15,7 @@ import {
 
 import {
   Action,
+  selectPathname,
 } from './../../store';
 
 import {
@@ -26,7 +27,7 @@ import {
 const mapStateToProps = (
   state: StateInterface,
 ): NavigationStateProps => {
-  const currentUrl = state.router.location && state.router.location.pathname;
+  const currentUrl = selectPathname(state);
   return {
     currentUrl,
     isVisible: currentUrl && currentUrl !== `/${PAGE_ORDER[0].url}`,

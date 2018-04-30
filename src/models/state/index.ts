@@ -3,6 +3,10 @@ export {
 } from './main-state.interface';
 
 export {
+  RouteStateInterface,
+} from './route-state.interface';
+
+export {
   ResultsStateInterface,
 } from './results-state.interface';
 

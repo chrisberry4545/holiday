@@ -14,6 +14,8 @@ import {
   Action,
   backAPage,
   nextPage,
+  selectPossibleCostRanges,
+  selectSelectedCostRange,
   sendUserInputThunk,
   setSelectedCostRange,
 } from './../../store';
@@ -30,8 +32,8 @@ const mapStateToProps = (
   state: StateInterface,
 ): WhatCostStateProps => {
   return {
-    possibleCostRanges: state.main.formOptions.possibleCostRanges,
-    selectedCostRangeId: state.main.formInput.selectedCostRangeId,
+    possibleCostRanges: selectPossibleCostRanges(state),
+    selectedCostRangeId: selectSelectedCostRange(state),
   };
 };
 

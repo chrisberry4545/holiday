@@ -14,6 +14,8 @@ import {
   Action,
   backAPage,
   nextPage,
+  selectPossibleTemperatues,
+  selectSelectedTemperatureId,
   setSelectedTemperature,
 } from './../../store';
 
@@ -29,8 +31,8 @@ const mapStateToProps = (
   state: StateInterface,
 ): WhatTemperatureStateProps => {
   return {
-    possibleTemperatures: state.main.formOptions.possibleTemperatures,
-    selectedTemperatureId: state.main.formInput.selectedTemperatureId,
+    possibleTemperatures: selectPossibleTemperatues(state),
+    selectedTemperatureId: selectSelectedTemperatureId(state),
   };
 };
 

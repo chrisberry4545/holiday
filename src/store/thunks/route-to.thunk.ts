@@ -15,7 +15,8 @@ import {
 
 import {
   Action,
-} from './../../store/actions';
+  selectPathname,
+} from './../../store';
 
 import {
   sendUserInputThunk,
@@ -33,7 +34,7 @@ ThunkAction<Action, StateInterface, void>
   return (
     dispatch: Dispatch<StateInterface>, getState,
   ): Action => {
-    const currentPageIndex = getPageNumber(getState().router.location.pathname);
+    const currentPageIndex = getPageNumber(selectPathname(getState()));
     const previousPageIndex = currentPageIndex - 1;
     return dispatch(push(`${PAGE_ORDER[previousPageIndex].url}`));
   };
@@ -45,7 +46,7 @@ ThunkAction<Action, StateInterface, void>
   return (
     dispatch: Dispatch<StateInterface>, getState,
   ): Action => {
-    const currentPageIndex = getPageNumber(getState().router.location.pathname);
+    const currentPageIndex = getPageNumber(selectPathname(getState()));
     const nextPageIndex = currentPageIndex + 1;
     if (nextPageIndex === PAGE_ORDER.length - 1) {
       return dispatch(sendUserInputThunk() as any);
