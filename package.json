@@ -47,6 +47,7 @@
     "redux-thunk": "2.2.0",
     "reflect-metadata": "0.1.12",
     "replace-string-loader": "0.0.7",
+    "reselect": "^3.0.1",
     "sass-loader": "6.0.6",
     "source-map-loader": "0.2.3",
     "style-loader": "0.19.0",

@@ -1,8 +1,5 @@
-import {
-  ResultsStateInterface,
-} from './../../models/';
-
-export interface ResultsStateProps extends ResultsStateInterface {
+export interface ResultsStateProps {
+  isLoading: boolean;
   hasNextHoliday: boolean;
   hasPreviousHoliday: boolean;
 }

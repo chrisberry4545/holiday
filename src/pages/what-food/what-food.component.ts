@@ -14,6 +14,8 @@ import {
   Action,
   backAPage,
   nextPage,
+  selectPossibleFoodImportanceOptions,
+  selectSelectedFoodImportanceId,
   sendUserInputThunk,
   setSelectedFoodImportance,
 } from './../../store';
@@ -30,9 +32,8 @@ const mapStateToProps = (
   state: StateInterface,
 ): WhatFoodStateProps => {
   return {
-    possibleFoodImportanceOptions:
-      state.main.formOptions.possibleFoodImportantOptions,
-    selectedFoodImportanceId: state.main.formInput.selectedFoodImportanceId,
+    possibleFoodImportanceOptions: selectPossibleFoodImportanceOptions(state),
+    selectedFoodImportanceId: selectSelectedFoodImportanceId(state),
   };
 };
 

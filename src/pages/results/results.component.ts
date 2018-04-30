@@ -14,6 +14,9 @@ import {
   Action,
   goToNextHolidayResultThunk,
   goToPreviousHolidayResultThunk,
+  selectHasNextHoliday,
+  selectHasPreviousHoliday,
+  selectIsLoadingResults,
 } from './../../store';
 
 import {
@@ -22,19 +25,13 @@ import {
   ResultsStateProps,
 } from './';
 
-import {
-  getCurrentHolidayIndexForState,
-} from './../../helpers';
-
 const mapStateToProps = (
   state: StateInterface,
 ): ResultsStateProps => {
-  const currentHolidayIndex = getCurrentHolidayIndexForState(state);
   return {
-    ...state.main.results,
-    hasNextHoliday:
-      currentHolidayIndex < state.main.results.holidayResults.length - 1,
-    hasPreviousHoliday: currentHolidayIndex > 0,
+    hasNextHoliday: selectHasNextHoliday(state),
+    hasPreviousHoliday: selectHasPreviousHoliday(state),
+    isLoading: selectIsLoadingResults(state),
   };
 };
 

@@ -14,11 +14,9 @@ import {
 
 import {
   Action,
-} from './../../store/actions';
-
-import {
-  getCurrentHolidayIndexForState,
-} from './../../helpers';
+  selectNextHolidayId,
+  selectPreviousHolidayId,
+} from './../../store';
 
 export const goToPreviousHolidayResultThunk: ActionCreator<
 ThunkAction<Action, StateInterface, void>
@@ -26,13 +24,8 @@ ThunkAction<Action, StateInterface, void>
   return (
     dispatch: Dispatch<StateInterface>, getState,
   ): Action => {
-    const state = getState();
-    const currentHolidayIndex = getCurrentHolidayIndexForState(state);
-    const previousHoliday = state.main.results.holidayResults[
-      currentHolidayIndex - 1
-    ];
     return dispatch(push(
-      `${URLS.RESULTS.url}/${previousHoliday._id}`,
+      `${URLS.RESULTS.url}/${selectPreviousHolidayId(getState())}`,
     ));
   };
 };
@@ -43,13 +36,8 @@ ThunkAction<Action, StateInterface, void>
   return (
     dispatch: Dispatch<StateInterface>, getState,
   ): Action => {
-    const state = getState();
-    const currentHolidayIndex = getCurrentHolidayIndexForState(state);
-    const nextHoliday = state.main.results.holidayResults[
-      currentHolidayIndex + 1
-    ];
     return dispatch(push(
-      `${URLS.RESULTS.url}/${nextHoliday._id}`,
+      `${URLS.RESULTS.url}/${selectNextHolidayId(getState())}`,
     ));
   };
 };

@@ -10,6 +10,7 @@ import {
 
 import {
   Action,
+  selectSelectedHolidayResult,
 } from './../../store';
 
 import {
@@ -18,15 +19,11 @@ import {
   HolidayResultStateProps,
 } from './';
 
-import {
-  getCurrentHolidayForState,
-} from './../../helpers';
-
 const mapStateToProps = (
   state: StateInterface,
 ): HolidayResultStateProps => {
   return {
-    holidayResult: getCurrentHolidayForState(state),
+    holidayResult: selectSelectedHolidayResult(state),
   };
 };
 

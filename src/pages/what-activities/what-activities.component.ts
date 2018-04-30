@@ -15,6 +15,8 @@ import {
   backAPage,
   deselectActivityCategory,
   nextPage,
+  selectPossibleActivity,
+  selectSelectedActivityTypeIds,
   sendUserInputThunk,
   setSelectedActivityCategory,
 } from './../../store';
@@ -31,8 +33,8 @@ const mapStateToProps = (
   state: StateInterface,
 ): WhatActivitiesStateProps => {
   return {
-    possibleActivityCategories: state.main.formOptions.possibleActivities,
-    selectedActivityTypeIds: state.main.formInput.selectedActivityTypeIds,
+    possibleActivityCategories: selectPossibleActivity(state),
+    selectedActivityTypeIds: selectSelectedActivityTypeIds(state),
   };
 };
 

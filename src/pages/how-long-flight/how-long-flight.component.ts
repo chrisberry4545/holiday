@@ -15,6 +15,8 @@ import {
   Action,
   backAPage,
   nextPage,
+  selectPossibleFlightTimes,
+  selectSelectedFlightTime,
   setSelectedFlightTime,
 } from './../../store';
 
@@ -28,8 +30,8 @@ const mapStateToProps = (
   state: StateInterface,
 ): HowLongFlightStateProps => {
   return {
-    possibleFlightTimes: state.main.formOptions.possibleFlightTimes,
-    selectedFlightTimeId: state.main.formInput.selectedFlightTimeId,
+    possibleFlightTimes: selectPossibleFlightTimes(state),
+    selectedFlightTimeId: selectSelectedFlightTime(state),
   };
 };
 

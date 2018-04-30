@@ -25,10 +25,7 @@ import {
 const mapStateToProps = (
   state: StateInterface,
 ): LandingStateProps => {
-  return {
-    possibleFlightTimes: state.main.formOptions.possibleFlightTimes,
-    selectedFlightTimeId: state.main.formInput.selectedFlightTimeId,
-  };
+  return {};
 };
 
 const mapDispatchToProps = (
