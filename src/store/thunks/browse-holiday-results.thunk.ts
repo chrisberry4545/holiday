@@ -18,10 +18,6 @@ import {
   selectPreviousHolidayId,
 } from './../../store';
 
-import {
-  getCurrentHolidayIndexForState,
-} from './../../helpers';
-
 export const goToPreviousHolidayResultThunk: ActionCreator<
 ThunkAction<Action, StateInterface, void>
 > = () => {
