@@ -82,3 +82,18 @@ export const selectSelectedHolidayResult = createSelector(
     holiday._id === selectedHolidayId
   )),
 );
+
+export const selectSelectedHolidayHighlights = createSelector(
+  selectSelectedHolidayResult,
+  (holidayResult) => holidayResult && holidayResult.highlights,
+);
+
+export const selectSelectedHolidayCountry = createSelector(
+  selectSelectedHolidayResult,
+  (holidayResult) => holidayResult && holidayResult.country,
+);
+
+export const selectSelectedHolidayLatLng = createSelector(
+  selectSelectedHolidayCountry,
+  (country) => country && country.latLng,
+);

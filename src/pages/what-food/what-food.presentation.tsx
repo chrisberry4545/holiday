@@ -22,9 +22,11 @@ export const WhatFoodPresentation: React.StatelessComponent<
   onBack, onComplete, onSelectFoodImportance,
 }) => {
   return (
-    <div className={ 'o-main-container o-allow-for-header ' +
+    <div className={ 'o-main-container ' +
       'c-what-food' }>
-      <h2 className='o-spacing-bottom-xxlarge o-spacing-top-xxlarge'>
+      <h2 className={
+        'o-spacing-bottom-xxlarge o-spacing-top-xxlarge c-form-header'
+        }>
         What food do you like?
       </h2>
       <SingleSelectorPresentation

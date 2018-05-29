@@ -22,10 +22,10 @@ export const LandingPresentation: React.SFC<LandingCombinedProps> =
           onClick={ onStartJourney }>
           Find me a holiday
         </button>
-        <h1 className='o-spacing-bottom-xxlarge'>
+        <h1 className='o-spacing-bottom-xxlarge c-form-header'>
           Where should I go on holiday?
         </h1>
-        <p>
+        <p className='c-landing__text'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Praesent ut nisl finibus, egestas risus eget, placerat nunc.
           Phasellus dui lorem, vehicula lobortis lobortis ut, malesuada et

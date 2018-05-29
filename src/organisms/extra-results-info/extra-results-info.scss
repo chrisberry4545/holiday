@@ -1,0 +1,48 @@
+@import './../../styles/partner/<!--partnerName--settings-->';
+@import './../../styles/_tools';
+
+$highlight-breakpoint: 700px;
+
+.c-extra-results-info {}
+
+  .c-extra-results-info__title {
+    $extra-results-info__title-spacing: 30px;
+    $extra-results-info__title-border: 1px solid black;
+    text-align: center;
+    margin-bottom: $extra-results-info__title-spacing;
+    margin-top: $extra-results-info__title-spacing;
+    padding: $extra-results-info__title-spacing;
+    border-bottom: $extra-results-info__title-border;
+    border-top: $extra-results-info__title-border;
+  }
+
+  .c-extra-results-info__highlights-list {
+    display: flex;
+    flex-direction: column;
+    @media only screen and (min-width: $highlight-breakpoint) {
+      flex-direction: row;
+    }
+  }
+
+  .c-extra-results-info__highlight {
+    $highlight-spacing: 20px;
+    width: 100%;
+    @media only screen and (min-width: $highlight-breakpoint) {
+      &:nth-child(even) {
+        margin-left: $highlight-spacing;
+      }
+      &:nth-child(odd) {
+        margin-right: $highlight-spacing;
+      }
+    }
+  }
+
+  .c-extra-results-info__map {
+    height: 500px;
+  }
+
+  .c-extra-results-info__bottom-btns {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-end;
+  }

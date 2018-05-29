@@ -22,9 +22,11 @@ export const WhatCostPresentation: React.StatelessComponent<
   onBack, onComplete, onSelectedCostRange,
 }) => {
   return (
-    <div className={ 'o-main-container o-allow-for-header ' +
+    <div className={ 'o-main-container ' +
       'c-what-cost' }>
-      <h2 className='o-spacing-bottom-xxlarge o-spacing-top-xxlarge'>
+      <h2 className={
+        'o-spacing-bottom-xxlarge o-spacing-top-xxlarge c-form-header'
+        }>
         What cost?
       </h2>
       <SingleSelectorPresentation

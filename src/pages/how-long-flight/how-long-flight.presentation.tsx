@@ -21,9 +21,11 @@ export const HowLongFlightPresentation: React.SFC<HowLongFlightCombinedProps> =
 }) => {
   return (
     <div
-      className={ 'c-how-long-flight o-main-container ' +
-        'o-allow-for-header'}>
-      <h2 className='o-spacing-bottom-xxlarge o-spacing-top-xxlarge'>
+      className={ 'c-how-long-flight o-main-container' }>
+      <h2 className={
+        'o-spacing-bottom-xxlarge o-spacing-top-xxlarge ' +
+        'c-form-header'
+        }>
         What sort of flight time do you want?
       </h2>
       <SingleSelectorPresentation

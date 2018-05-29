@@ -16,8 +16,13 @@ import {
   resultsReducer,
 } from './results.reducer';
 
+import {
+  uiReducer,
+} from './ui.reducer';
+
 export const reducer = combineReducers<MainStateInterface>({
   formInput: formInputReducer,
   formOptions: formOptionsReducer,
   results: resultsReducer,
+  ui: uiReducer,
 });
