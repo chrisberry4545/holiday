@@ -27,8 +27,8 @@ export const HolidayResultPresentation: React.SFC<HolidayResultCombinedProps>
   return holidayResult ? (
     <div>
       <ResultsSidebarComponent />
-      <img className='c-holiday-result__first-image'
-        src={ holidayResult.mainImageUrl } />
+      <div className='c-holiday-result__first-image'
+        style={ { backgroundImage: `url(${holidayResult.mainImageUrl}` } } />
       <div className={
           'c-holiday-result__details u-raised-1 ' +
           'o-spacing-horizontal-xlarge o-spacing-bottom-xxlarge'
