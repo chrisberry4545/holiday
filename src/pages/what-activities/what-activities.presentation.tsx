@@ -22,9 +22,11 @@ export const WhatActivitiesPresentation: React.StatelessComponent<
   onBack, onComplete, onDeselectActivity, onSelectActivity,
 }) => {
   return (
-    <div className={'o-main-container o-allow-for-header ' +
+    <div className={'o-main-container ' +
       'c-what-activities'}>
-      <h2 className='o-spacing-bottom-xxlarge o-spacing-top-xxlarge'>
+      <h2 className={
+        'o-spacing-bottom-xxlarge o-spacing-top-xxlarge c-form-header'
+      }>
         What activities?
       </h2>
       <MultiSelectorPresentation

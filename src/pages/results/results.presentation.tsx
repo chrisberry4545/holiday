@@ -24,7 +24,7 @@ export const ResultsPresentation: React.SFC<ResultsCombinedProps> =
   onPreviousHoliday, onNextHoliday,
 }) => {
   return (
-    <div className='o-allow-for-header c-results'>
+    <div className='c-results'>
       {
         isLoading ? <div>Loading...</div>
         :
@@ -34,7 +34,7 @@ export const ResultsPresentation: React.SFC<ResultsCombinedProps> =
           </Route>
         </Switch>
       }
-      <div className={'o-spacing-top-xlarge o-main-container ' +
+      <div className={'o-main-container ' +
         'o-space-between-children'}>
         {
           hasPreviousHoliday ?

@@ -18,8 +18,8 @@ $flight-times-background: url(
 ) !default;
 $flight-times-background-overlay: linear-gradient(
   4deg,
-  transparentize(#c1dfc4, 0.3),
-  transparentize(#deecdd, 0.3)
+  rgba(146, 146, 146, 0.7),
+  rgba(186, 193, 186, 0.7)
 ) !default;
 
 $what-activities-background: url(
@@ -54,6 +54,3 @@ $what-temperature-background: url(
   '/assets/backgrounds/mountains.jpg'
 ) !default;
 $what-temperature-background-overlay: rgba(193, 100, 124, 0.66) !default;
-
-$results-background: #000000;
-$results-main-image-background: $landing-background-overlay !default;

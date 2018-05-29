@@ -13,3 +13,7 @@ export {
 export {
   StateInterface,
 } from './state.interface';
+
+export {
+  UiStateInterface,
+} from './ui-state.interface';

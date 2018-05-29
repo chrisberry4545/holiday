@@ -11,3 +11,7 @@
     $loading-background-overlay
   );
 }
+
+  .c-loading__text {
+    color: $loading-spinner-color;
+  }

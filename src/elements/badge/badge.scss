@@ -1,3 +1,6 @@
+@import './../../styles/partner/<!--partnerName--settings-->';
+@import './../../styles/_tools';
+
 .c-badge {
   margin: 7px;
 }
@@ -8,10 +11,11 @@
     height: $c-badge__inner-size;
     font-size: 10px;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
     border-radius: 50%;
+    text-align: center;
+    border: 1px solid $results-badge-color;
   }

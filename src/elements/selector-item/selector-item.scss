@@ -6,6 +6,7 @@
   padding: 20px;
   cursor: pointer;
   @include selection-border-hover();
+  color: $selector-color;
 }
 
   .c-selector-item--selected {

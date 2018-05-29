@@ -34,3 +34,8 @@ $spacing-xxlarge: $default-spacing-unit * 6;
 .o-spacing-top-xxlarge {
   margin-top: $spacing-xxlarge;
 }
+
+.o-spacing-horizontal-xlarge {
+  margin-left: $spacing-xlarge;
+  margin-right: $spacing-xlarge;
+}
